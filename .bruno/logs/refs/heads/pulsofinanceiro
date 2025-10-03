@@ -1,0 +1,25 @@
+0000000000000000000000000000000000000000 51e2d1533d60b5ec3d86ff164b4fdc4ac118cef6 Bruno Afonso <nobruel@gmail.com> 1752621739 -0300	branch: Created from HEAD
+51e2d1533d60b5ec3d86ff164b4fdc4ac118cef6 77b63180ffbfc1a99206c9f2e27b6767e97c27a9 Bruno Afonso <nobruel@gmail.com> 1752622128 -0300	commit: criacao de diretorio
+77b63180ffbfc1a99206c9f2e27b6767e97c27a9 cff44f8fea54c628738d084b368ced3a140824a7 Bruno Afonso <nobruel@gmail.com> 1752623123 -0300	commit: alinhamento calendario, mobile e desktop vision
+cff44f8fea54c628738d084b368ced3a140824a7 5cd9cdc4451f216438e7a07c2fd602ba1ca17419 Bruno Afonso <nobruel@gmail.com> 1752623305 -0300	commit: Changelog
+5cd9cdc4451f216438e7a07c2fd602ba1ca17419 70839d2de0b1f6fba0968f8d7c8182335a563199 Bruno Afonso <nobruel@gmail.com> 1752635359 -0300	commit: logo on mobile devices
+70839d2de0b1f6fba0968f8d7c8182335a563199 0322c82136911e4832ecc1a7498b333b1199ea90 Bruno Afonso <nobruel@gmail.com> 1752635728 -0300	commit: light mode fixed
+0322c82136911e4832ecc1a7498b333b1199ea90 5b5e69f075d739c2fddc0fc4608c791a68e6e7dc Bruno Afonso <nobruel@gmail.com> 1752643097 -0300	commit: alteracoes de cores e layout para o lightmode
+5b5e69f075d739c2fddc0fc4608c791a68e6e7dc 4cb66f86b8bf067f0752c9eb3a4b08fccf7d3e3b Bruno Afonso <nobruel@gmail.com> 1752643421 -0300	commit: v0.0.12: Ajustes finais de contraste, cores e UX no admin (light/dark), cards de distribuição coloridos, changelog e versionamento
+4cb66f86b8bf067f0752c9eb3a4b08fccf7d3e3b 6f87384633fb244e0be8ca5b997e967ea3c8f409 Bruno Afonso <nobruel@gmail.com> 1752643656 -0300	commit: fix(docker): inclui CHANGELOG.json na imagem removendo do .dockerignore
+6f87384633fb244e0be8ca5b997e967ea3c8f409 ce97fab04013fa251e8af7075160de5b8fef3c08 Bruno Afonso <nobruel@gmail.com> 1752644632 -0300	commit: lightmode ON
+ce97fab04013fa251e8af7075160de5b8fef3c08 bfe1e564aa359121101de9900b851382353b5253 Bruno Afonso <nobruel@gmail.com> 1752868365 -0300	commit: user experience transactions
+bfe1e564aa359121101de9900b851382353b5253 c690f6a13d2c8c58ebb660a09902ab87494444f7 Bruno Afonso <nobruel@gmail.com> 1753129844 -0300	commit: corrigindo numero de telefone
+c690f6a13d2c8c58ebb660a09902ab87494444f7 734b0ab981543909c8866fbda0124f15ee7bf3a4 Bruno Afonso <nobruel@gmail.com> 1753130548 -0300	commit: tratativa de numeros de telefone
+734b0ab981543909c8866fbda0124f15ee7bf3a4 f2ac3ee6d012a206fa93136714ca1e41d129b163 Bruno Afonso <nobruel@gmail.com> 1753152483 -0300	commit: problemas com o numero do telefone, ajustes 1 de 5
+f2ac3ee6d012a206fa93136714ca1e41d129b163 66436a2ce9643553ac3d0a58ebbbda3dd6fd2c10 Bruno Afonso <nobruel@gmail.com> 1753157037 -0300	commit: telefone OK
+66436a2ce9643553ac3d0a58ebbbda3dd6fd2c10 b21a4176bf8d928e34907ac4053041dc809f64ad Bruno Afonso <nobruel@gmail.com> 1753162145 -0300	commit: Deploy service: problemas com o numero do telefone, ajustes 2 de 5`
+b21a4176bf8d928e34907ac4053041dc809f64ad 265eefb7401b00141c32511b37fb0b1cc682bbb7 Bruno Afonso <nobruel@gmail.com> 1753165292 -0300	commit: sidebar e telefone OK
+265eefb7401b00141c32511b37fb0b1cc682bbb7 cd6f5b4f885b2aadd94cff22d232cb276ee78add Bruno Afonso <nobruel@gmail.com> 1753360110 -0300	commit: garantia e conferencia de deleção em cascata
+cd6f5b4f885b2aadd94cff22d232cb276ee78add 62c72720f9132b133bcfa203de60390a3a228ee0 Bruno Afonso <nobruel@gmail.com> 1753737931 -0300	commit: estabilizando
+62c72720f9132b133bcfa203de60390a3a228ee0 13c2273379d221545216b76f5caaaf8175c2a8e6 Bruno Afonso <nobruel@gmail.com> 1753740218 -0300	commit: relatorios com data e dados
+13c2273379d221545216b76f5caaaf8175c2a8e6 c80124c62e36d48f8b121c3af9b4d311d1704f1f Bruno Afonso <nobruel@gmail.com> 1753807437 -0300	commit: CHANGELOG
+c80124c62e36d48f8b121c3af9b4d311d1704f1f b15d4f969ff14960f5ead9f116607ebf1c1953da Bruno Afonso <nobruel@gmail.com> 1753832382 -0300	commit: grafico de pizza
+b15d4f969ff14960f5ead9f116607ebf1c1953da cadf04345496f28e7d32fc85779a5ea9b5c904a0 Bruno Afonso <nobruel@gmail.com> 1753832695 -0300	commit: pizza chart with seven days
+cadf04345496f28e7d32fc85779a5ea9b5c904a0 7624cd9343ec4c965a4b86cb24fae969e88446e0 Bruno Afonso <nobruel@gmail.com> 1753848590 -0300	commit: Personalizar SaaS com mensagens de boas vindas
+7624cd9343ec4c965a4b86cb24fae969e88446e0 e2db67fb41d767e34ac358954c766bb0fa60c9d6 Bruno Afonso <nobruel@gmail.com> 1753849928 -0300	commit: Customize SuperAdmin OK

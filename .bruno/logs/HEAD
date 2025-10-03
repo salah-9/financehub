@@ -1,0 +1,108 @@
+0000000000000000000000000000000000000000 16111586a2fadf3d5c5a7406cdfcf8c4db47f697 Bruno Afonso <nobruel@gmail.com> 1752430354 -0300	clone: from https://github.com/comunidadeaimakersclub/PersonalFinanceTracker.git
+16111586a2fadf3d5c5a7406cdfcf8c4db47f697 4853546609621b7182814ee373884733e41e1494 Bruno Afonso <nobruel@gmail.com> 1752433023 -0300	checkout: moving from main to bruno
+4853546609621b7182814ee373884733e41e1494 0dc8e3ab6a25529fc5db40f99c27413ded496d70 Bruno Afonso <nobruel@gmail.com> 1752433729 -0300	commit: sera
+0dc8e3ab6a25529fc5db40f99c27413ded496d70 7f8cd85d98b76f6c91aa561d278e23b2fbf986f9 Bruno Afonso <nobruel@gmail.com> 1752433941 -0300	commit: modificacao dentro do package para rodar
+7f8cd85d98b76f6c91aa561d278e23b2fbf986f9 5b84be6690ee7a320b5093e3f1ebafae43eb093a Bruno Afonso <nobruel@gmail.com> 1752434403 -0300	commit: personificar usuario inativo
+5b84be6690ee7a320b5093e3f1ebafae43eb093a e57f4819604a1bb22d35608e4bcbbced20057953 Bruno Afonso <nobruel@gmail.com> 1752446962 -0300	commit: fiz rodar local, agora vai no easypanel, sera?
+e57f4819604a1bb22d35608e4bcbbced20057953 4ee18473672d79430ce030dd9b16bb7d34a4368d Bruno Afonso <nobruel@gmail.com> 1752447512 -0300	commit: corrigindo arquivos faltantes quando vai pra producao
+4ee18473672d79430ce030dd9b16bb7d34a4368d 8e0c835345472fe89bcbb67ef3e33f572cb30f4c Bruno Afonso <nobruel@gmail.com> 1752448805 -0300	commit: o pai aqui ta detonando! ja vou fazer o esquema de migracao do banco agora
+8e0c835345472fe89bcbb67ef3e33f572cb30f4c 55943807a194fb8af73f8a172c7e490c3d49e841 Bruno Afonso <nobruel@gmail.com> 1752448982 -0300	commit: gerando ddl mas nao baixando, evolucao ducarvalho!
+55943807a194fb8af73f8a172c7e490c3d49e841 b390bb7b3214cf6ef48b8fafe8d0065df7b93bbd Bruno Afonso <nobruel@gmail.com> 1752449516 -0300	commit: database agora faz download dos DDLs de criacao
+b390bb7b3214cf6ef48b8fafe8d0065df7b93bbd 3970da329c97c586dcef90c1cc8f7568648bc671 Bruno Afonso <nobruel@gmail.com> 1752461867 -0300	commit: banco de dados sinronizados com todas as colunas, agora vai da boa?
+3970da329c97c586dcef90c1cc8f7568648bc671 db9e774a811f73665b20fc5748b0476a80c0a2b5 Bruno Afonso <nobruel@gmail.com> 1752463737 -0300	commit: versao moda foca
+db9e774a811f73665b20fc5748b0476a80c0a2b5 71c096f7a40c16f63a217bb4a589ecaed0d7fdf5 Bruno Afonso <nobruel@gmail.com> 1752469969 -0300	commit: agora sim é a mega versao massa
+71c096f7a40c16f63a217bb4a589ecaed0d7fdf5 88768b18f77d6c9823751c0f20cb7b844561d703 Bruno Afonso <nobruel@gmail.com> 1752471216 -0300	commit: problema de duplo hash quando o usuario e criado dentro do admin como superadmin
+88768b18f77d6c9823751c0f20cb7b844561d703 527e271ebee1a650d93542c27ac17fab92fbb244 Bruno Afonso <nobruel@gmail.com> 1752472037 -0300	commit: aqui nao jacare, modal nao vai me dar baile, segue em frente!
+527e271ebee1a650d93542c27ac17fab92fbb244 84166ae673786fb118451c8c15a22fcba52947aa Bruno Afonso <nobruel@gmail.com> 1752522632 -0300	commit: Drizzle adicionado
+84166ae673786fb118451c8c15a22fcba52947aa ea9c59251be79ac8c4d34b0a5c824129e43b8478 Bruno Afonso <nobruel@gmail.com> 1752524989 -0300	commit: usuario inativado API soft delete
+ea9c59251be79ac8c4d34b0a5c824129e43b8478 38fecb278bce7e5ad306d8265559328870862ee4 Bruno Afonso <nobruel@gmail.com> 1752525661 -0300	commit: agora o usuario poderá ser excluido com tudo que precisa, nao mais ficando com soft delete
+38fecb278bce7e5ad306d8265559328870862ee4 235366815746526ee88673a6f96879e74c43bd30 Bruno Afonso <nobruel@gmail.com> 1752526859 -0300	commit: changelog
+235366815746526ee88673a6f96879e74c43bd30 54bcf18fe7939dc544d5a6c66d38bc820f0e92dd Bruno Afonso <nobruel@gmail.com> 1752528747 -0300	commit: geracao de token
+54bcf18fe7939dc544d5a6c66d38bc820f0e92dd c39238c73b52d19e1c5b871b04a466decaa9b3cc Bruno Afonso <nobruel@gmail.com> 1752528930 -0300	commit: atualizacao experiencia ao excluir token api
+c39238c73b52d19e1c5b871b04a466decaa9b3cc e2052e601c2f9d45ee56ddcd9618cd0d815579b4 Bruno Afonso <nobruel@gmail.com> 1752529222 -0300	commit: correcao de overflow em dispositivos moveis nas listagens de api token
+e2052e601c2f9d45ee56ddcd9618cd0d815579b4 f09bfba35e3d78d438e74a5d7590c8bc7cf27ebb Bruno Afonso <nobruel@gmail.com> 1752529489 -0300	commit: responsividade
+f09bfba35e3d78d438e74a5d7590c8bc7cf27ebb 077fc1bb2054529c1b6ada535296952f73eb4e60 Bruno Afonso <nobruel@gmail.com> 1752557565 -0300	commit: ok
+077fc1bb2054529c1b6ada535296952f73eb4e60 077fc1bb2054529c1b6ada535296952f73eb4e60 Bruno Afonso <nobruel@gmail.com> 1752558132 -0300	reset: moving to HEAD
+077fc1bb2054529c1b6ada535296952f73eb4e60 9b5cdababf9d07e62db6a1260b4cc7cb8467309d Bruno Afonso <nobruel@gmail.com> 1752580701 -0300	commit: fix layout
+9b5cdababf9d07e62db6a1260b4cc7cb8467309d de937ea53bed43b84ed6277ea6dd2e0e672bc521 Bruno Afonso <nobruel@gmail.com> 1752581580 -0300	commit: logo
+de937ea53bed43b84ed6277ea6dd2e0e672bc521 ac44efafeb698b53ad9fc2aa3205762c8fb48712 Bruno Afonso <nobruel@gmail.com> 1752602824 -0300	commit: personalizacao logo
+ac44efafeb698b53ad9fc2aa3205762c8fb48712 d8c181202a07b8f201fb8b36b472205e64fa86bc Bruno Afonso <nobruel@gmail.com> 1752603193 -0300	commit: agora sim
+d8c181202a07b8f201fb8b36b472205e64fa86bc 66663075f56d43d70b7c82c453c4059767a2b809 Bruno Afonso <nobruel@gmail.com> 1752619742 -0300	commit: logo save and delete
+66663075f56d43d70b7c82c453c4059767a2b809 51e2d1533d60b5ec3d86ff164b4fdc4ac118cef6 Bruno Afonso <nobruel@gmail.com> 1752621045 -0300	commit: agora funciona
+51e2d1533d60b5ec3d86ff164b4fdc4ac118cef6 51e2d1533d60b5ec3d86ff164b4fdc4ac118cef6 Bruno Afonso <nobruel@gmail.com> 1752621739 -0300	checkout: moving from bruno to pulsofinanceiro
+51e2d1533d60b5ec3d86ff164b4fdc4ac118cef6 77b63180ffbfc1a99206c9f2e27b6767e97c27a9 Bruno Afonso <nobruel@gmail.com> 1752622128 -0300	commit: criacao de diretorio
+77b63180ffbfc1a99206c9f2e27b6767e97c27a9 cff44f8fea54c628738d084b368ced3a140824a7 Bruno Afonso <nobruel@gmail.com> 1752623123 -0300	commit: alinhamento calendario, mobile e desktop vision
+cff44f8fea54c628738d084b368ced3a140824a7 5cd9cdc4451f216438e7a07c2fd602ba1ca17419 Bruno Afonso <nobruel@gmail.com> 1752623305 -0300	commit: Changelog
+5cd9cdc4451f216438e7a07c2fd602ba1ca17419 70839d2de0b1f6fba0968f8d7c8182335a563199 Bruno Afonso <nobruel@gmail.com> 1752635359 -0300	commit: logo on mobile devices
+70839d2de0b1f6fba0968f8d7c8182335a563199 0322c82136911e4832ecc1a7498b333b1199ea90 Bruno Afonso <nobruel@gmail.com> 1752635728 -0300	commit: light mode fixed
+0322c82136911e4832ecc1a7498b333b1199ea90 5b5e69f075d739c2fddc0fc4608c791a68e6e7dc Bruno Afonso <nobruel@gmail.com> 1752643097 -0300	commit: alteracoes de cores e layout para o lightmode
+5b5e69f075d739c2fddc0fc4608c791a68e6e7dc 4cb66f86b8bf067f0752c9eb3a4b08fccf7d3e3b Bruno Afonso <nobruel@gmail.com> 1752643421 -0300	commit: v0.0.12: Ajustes finais de contraste, cores e UX no admin (light/dark), cards de distribuição coloridos, changelog e versionamento
+4cb66f86b8bf067f0752c9eb3a4b08fccf7d3e3b 6f87384633fb244e0be8ca5b997e967ea3c8f409 Bruno Afonso <nobruel@gmail.com> 1752643656 -0300	commit: fix(docker): inclui CHANGELOG.json na imagem removendo do .dockerignore
+6f87384633fb244e0be8ca5b997e967ea3c8f409 ce97fab04013fa251e8af7075160de5b8fef3c08 Bruno Afonso <nobruel@gmail.com> 1752644632 -0300	commit: lightmode ON
+ce97fab04013fa251e8af7075160de5b8fef3c08 bfe1e564aa359121101de9900b851382353b5253 Bruno Afonso <nobruel@gmail.com> 1752868365 -0300	commit: user experience transactions
+bfe1e564aa359121101de9900b851382353b5253 c690f6a13d2c8c58ebb660a09902ab87494444f7 Bruno Afonso <nobruel@gmail.com> 1753129844 -0300	commit: corrigindo numero de telefone
+c690f6a13d2c8c58ebb660a09902ab87494444f7 734b0ab981543909c8866fbda0124f15ee7bf3a4 Bruno Afonso <nobruel@gmail.com> 1753130548 -0300	commit: tratativa de numeros de telefone
+734b0ab981543909c8866fbda0124f15ee7bf3a4 f2ac3ee6d012a206fa93136714ca1e41d129b163 Bruno Afonso <nobruel@gmail.com> 1753152483 -0300	commit: problemas com o numero do telefone, ajustes 1 de 5
+f2ac3ee6d012a206fa93136714ca1e41d129b163 66436a2ce9643553ac3d0a58ebbbda3dd6fd2c10 Bruno Afonso <nobruel@gmail.com> 1753157037 -0300	commit: telefone OK
+66436a2ce9643553ac3d0a58ebbbda3dd6fd2c10 b21a4176bf8d928e34907ac4053041dc809f64ad Bruno Afonso <nobruel@gmail.com> 1753162145 -0300	commit: Deploy service: problemas com o numero do telefone, ajustes 2 de 5`
+b21a4176bf8d928e34907ac4053041dc809f64ad 265eefb7401b00141c32511b37fb0b1cc682bbb7 Bruno Afonso <nobruel@gmail.com> 1753165292 -0300	commit: sidebar e telefone OK
+265eefb7401b00141c32511b37fb0b1cc682bbb7 cd6f5b4f885b2aadd94cff22d232cb276ee78add Bruno Afonso <nobruel@gmail.com> 1753360110 -0300	commit: garantia e conferencia de deleção em cascata
+cd6f5b4f885b2aadd94cff22d232cb276ee78add 62c72720f9132b133bcfa203de60390a3a228ee0 Bruno Afonso <nobruel@gmail.com> 1753737931 -0300	commit: estabilizando
+62c72720f9132b133bcfa203de60390a3a228ee0 13c2273379d221545216b76f5caaaf8175c2a8e6 Bruno Afonso <nobruel@gmail.com> 1753740218 -0300	commit: relatorios com data e dados
+13c2273379d221545216b76f5caaaf8175c2a8e6 c80124c62e36d48f8b121c3af9b4d311d1704f1f Bruno Afonso <nobruel@gmail.com> 1753807437 -0300	commit: CHANGELOG
+c80124c62e36d48f8b121c3af9b4d311d1704f1f b15d4f969ff14960f5ead9f116607ebf1c1953da Bruno Afonso <nobruel@gmail.com> 1753832382 -0300	commit: grafico de pizza
+b15d4f969ff14960f5ead9f116607ebf1c1953da cadf04345496f28e7d32fc85779a5ea9b5c904a0 Bruno Afonso <nobruel@gmail.com> 1753832695 -0300	commit: pizza chart with seven days
+cadf04345496f28e7d32fc85779a5ea9b5c904a0 7624cd9343ec4c965a4b86cb24fae969e88446e0 Bruno Afonso <nobruel@gmail.com> 1753848590 -0300	commit: Personalizar SaaS com mensagens de boas vindas
+7624cd9343ec4c965a4b86cb24fae969e88446e0 e2db67fb41d767e34ac358954c766bb0fa60c9d6 Bruno Afonso <nobruel@gmail.com> 1753849928 -0300	commit: Customize SuperAdmin OK
+e2db67fb41d767e34ac358954c766bb0fa60c9d6 e2db67fb41d767e34ac358954c766bb0fa60c9d6 Bruno Afonso <nobruel@gmail.com> 1755024336 -0300	checkout: moving from pulsofinanceiro to claude
+e2db67fb41d767e34ac358954c766bb0fa60c9d6 81dae0056bf59d42b8aaeaa344afaa74bb2dda3e Bruno Afonso <nobruel@gmail.com> 1755093884 -0300	commit: versao mensagens
+81dae0056bf59d42b8aaeaa344afaa74bb2dda3e b47c1a2d138d34faa7b90dc2725e8e7ab7cb68b6 Bruno Afonso <nobruel@gmail.com> 1755094908 -0300	commit: claude 1.0
+b47c1a2d138d34faa7b90dc2725e8e7ab7cb68b6 7f53948b53820f88b843ff513f86d6aec22f2473 Bruno Afonso <nobruel@gmail.com> 1755125334 -0300	commit: session qrcode OK
+7f53948b53820f88b843ff513f86d6aec22f2473 b0909702c61c58a25cab4faae706fee8dbdc26de Bruno Afonso <nobruel@gmail.com> 1755186106 -0300	commit: SpinningBorder
+b0909702c61c58a25cab4faae706fee8dbdc26de e7daf94c3ca247522b85ee97eced12eebbb9dc3e Bruno Afonso <nobruel@gmail.com> 1755252286 -0300	commit: tela conversas
+e7daf94c3ca247522b85ee97eced12eebbb9dc3e 3f0781b8a3bec285570696a9d6ed686e771aaa95 Bruno Afonso <nobruel@gmail.com> 1755259599 -0300	commit: websocket + whatsapp funcionando
+3f0781b8a3bec285570696a9d6ed686e771aaa95 d705031b08b5e3c505f954633d40f3e0df97a620 Bruno Afonso <nobruel@gmail.com> 1755283617 -0300	commit: atualizado
+d705031b08b5e3c505f954633d40f3e0df97a620 df3111cb1d2852c8098fa11bee7d3b45178f70db Bruno Afonso <nobruel@gmail.com> 1755284953 -0300	commit: bom demais
+df3111cb1d2852c8098fa11bee7d3b45178f70db c6fd927562e5b5609aa9c90f5558c85feb6a9739 Bruno Afonso <nobruel@gmail.com> 1757688299 -0300	commit: correcao do docs
+c6fd927562e5b5609aa9c90f5558c85feb6a9739 0000000000000000000000000000000000000000 Bruno Afonso <nobruel@gmail.com> 1757801612 -0300	Branch: renamed refs/heads/claude to refs/heads/atualizacoes
+0000000000000000000000000000000000000000 c6fd927562e5b5609aa9c90f5558c85feb6a9739 Bruno Afonso <nobruel@gmail.com> 1757801612 -0300	Branch: renamed refs/heads/claude to refs/heads/atualizacoes
+c6fd927562e5b5609aa9c90f5558c85feb6a9739 72496c3ae9493dbe68c02e403355ba9196b34f44 Bruno Afonso <nobruel@gmail.com> 1757803169 -0300	commit: atualizacao excluir lembrete
+72496c3ae9493dbe68c02e403355ba9196b34f44 5427f56bccc99ed87b667a9892f44aff606101e8 Bruno Afonso <nobruel@gmail.com> 1757803880 -0300	commit: correacao data na listagem das transacoes
+5427f56bccc99ed87b667a9892f44aff606101e8 1aafb967068e48b6f220b8bf06e0271afdee5182 Bruno Afonso <nobruel@gmail.com> 1757804313 -0300	commit: fundo branco mouse over Receitas Vs Despesas OK
+1aafb967068e48b6f220b8bf06e0271afdee5182 95fefcff19de4904a97f3ee8d50860debd5a3ebe Bruno Afonso <nobruel@gmail.com> 1757804602 -0300	commit: mesese lembretes em portugues
+95fefcff19de4904a97f3ee8d50860debd5a3ebe a1a688e88af21aaec9d6e5c281026f098f38fcd8 Bruno Afonso <nobruel@gmail.com> 1757806340 -0300	commit: graficos com periodos
+a1a688e88af21aaec9d6e5c281026f098f38fcd8 8399526053958a1d6edf07e8f975a1cdeb08d5b6 Bruno Afonso <nobruel@gmail.com> 1757809845 -0300	commit: relatorios com exportacao
+8399526053958a1d6edf07e8f975a1cdeb08d5b6 68799095619b6df145461798b569f1217179a4ac Bruno Afonso <nobruel@gmail.com> 1757810156 -0300	commit: dashboard mensal e anual
+68799095619b6df145461798b569f1217179a4ac 8da5a5c871ad59fe6544c82d784bab109bed560b Bruno Afonso <nobruel@gmail.com> 1757826832 -0300	commit: modal com zoom in
+8da5a5c871ad59fe6544c82d784bab109bed560b 743885ee3f7478cbd770c03d9ba3e060d2292450 Bruno Afonso <nobruel@gmail.com> 1757833652 -0300	commit: atualizado
+743885ee3f7478cbd770c03d9ba3e060d2292450 0000000000000000000000000000000000000000 Bruno Afonso <nobruel@gmail.com> 1757901950 -0300	Branch: renamed refs/heads/atualizacoes to refs/heads/instalador
+0000000000000000000000000000000000000000 743885ee3f7478cbd770c03d9ba3e060d2292450 Bruno Afonso <nobruel@gmail.com> 1757901950 -0300	Branch: renamed refs/heads/atualizacoes to refs/heads/instalador
+743885ee3f7478cbd770c03d9ba3e060d2292450 0cdee2d97180adc79094cfd6fd39830d5d3f221a Bruno Afonso <nobruel@gmail.com> 1757903122 -0300	commit: instalador
+0cdee2d97180adc79094cfd6fd39830d5d3f221a 65f75ecc1cbeabf41b34f6d271259d1d2383ec84 Bruno Afonso <nobruel@gmail.com> 1757963892 -0300	commit: atualizacao docs
+65f75ecc1cbeabf41b34f6d271259d1d2383ec84 f2cd3181abec9b497f06f9505d950c640a605575 Bruno Afonso <nobruel@gmail.com> 1757964800 -0300	commit: apis docs atualizadas
+f2cd3181abec9b497f06f9505d950c640a605575 7579b17df25ce7262eb81fd0e71b9c65771bc4cf Bruno Afonso <nobruel@gmail.com> 1757965734 -0300	commit: agora sim tudo atualizado
+7579b17df25ce7262eb81fd0e71b9c65771bc4cf c9ab912aeec6197c6fab1623896f2820f0e66d75 Bruno Afonso <nobruel@gmail.com> 1758141234 -0300	commit: WEBHOOK NOTIFICACAO ATIVACAO
+c9ab912aeec6197c6fab1623896f2820f0e66d75 b66ada3151a27d7f7c607b9f9c50bcfac8622ab1 Bruno Afonso <nobruel@gmail.com> 1758159786 -0300	commit: mensagem ativacao com user e senha
+b66ada3151a27d7f7c607b9f9c50bcfac8622ab1 8d09ad21664ca29335b0953bd2dc65ae69656a04 Bruno Afonso <nobruel@gmail.com> 1758161098 -0300	commit: ALTERACAO de SENHA
+8d09ad21664ca29335b0953bd2dc65ae69656a04 f0cb70eacc839756f7a2b86c27132a0d5991883f Bruno Afonso <nobruel@gmail.com> 1759418708 -0300	commit: instalacao nova antes de comecar a migrar o DB novamente
+f0cb70eacc839756f7a2b86c27132a0d5991883f 8dd8cedf6c6435b96bedf6c3d126b34a4ba93857 Bruno Afonso <nobruel@gmail.com> 1759421518 -0300	commit: corrigido salvar mensagens de boas vindas
+8dd8cedf6c6435b96bedf6c3d126b34a4ba93857 8dd8cedf6c6435b96bedf6c3d126b34a4ba93857 Bruno Afonso <nobruel@gmail.com> 1759427464 -0300	checkout: moving from instalador to xpiria
+8dd8cedf6c6435b96bedf6c3d126b34a4ba93857 ee38602b521254c4e334ae146c17141c9b911099 Bruno Afonso <nobruel@gmail.com> 1759428052 -0300	commit: criando o webhook ativacao pelo .env
+ee38602b521254c4e334ae146c17141c9b911099 614d1ae790b256612de645db70c3d0696170be7a Bruno Afonso <nobruel@gmail.com> 1759429956 -0300	commit: conexao socket para dados em tempo real
+614d1ae790b256612de645db70c3d0696170be7a f981723e632466d15a09f10657888d3dfe6fb7b6 Bruno Afonso <nobruel@gmail.com> 1759429976 -0300	commit: salvei dados em tempo real, funcionara?
+f981723e632466d15a09f10657888d3dfe6fb7b6 96c08aa193200fc1547a648bd54223dbac5ca970 Bruno Afonso <nobruel@gmail.com> 1759430544 -0300	commit: ajustando websocket
+96c08aa193200fc1547a648bd54223dbac5ca970 8236bf5e8fe321289688602fc34d4ba7f39689d0 Bruno Afonso <nobruel@gmail.com> 1759431701 -0300	commit: coloca textos padroes nas mensagens de boas vindas
+8236bf5e8fe321289688602fc34d4ba7f39689d0 dfcb0e58fa0183c963da26d2dc70f2462e8b1234 Bruno Afonso <nobruel@gmail.com> 1759432275 -0300	commit: envia o dominio via payload para webhook de ativacao do usuario
+dfcb0e58fa0183c963da26d2dc70f2462e8b1234 a0e1939009b1d613e24419ea07710eba3b32ee3d Bruno Afonso <nobruel@gmail.com> 1759435028 -0300	commit: atualizacoes feitas, waha e notificacoes foram excluidos, agora também esta atualizando em tempo real
+a0e1939009b1d613e24419ea07710eba3b32ee3d 9e95d0105bae90fb79c8bad14aed4f69dc47bd05 Bruno Afonso <nobruel@gmail.com> 1759438085 -0300	commit: modal quando edita configuracoes e nao salva
+9e95d0105bae90fb79c8bad14aed4f69dc47bd05 cd0cca3f690994290e91b6fa8fd9da9d4fac7b6b Bruno Afonso <nobruel@gmail.com> 1759438605 -0300	commit: Fix: Corrige deploy dos logos para produção
+cd0cca3f690994290e91b6fa8fd9da9d4fac7b6b 78327a433904dbeac772f892d1cb37ec7e1169a5 Bruno Afonso <nobruel@gmail.com> 1759439375 -0300	commit: retirar botao editar
+78327a433904dbeac772f892d1cb37ec7e1169a5 d4f83afc99fc83f21d5beff6df02685cab4c1dfa Bruno Afonso <nobruel@gmail.com> 1759440174 -0300	commit: /api/dashboard/summary no /docs agora documentado
+d4f83afc99fc83f21d5beff6df02685cab4c1dfa 031228776b9e3349c7f47f77b3a5ba112661e2b9 Bruno Afonso <nobruel@gmail.com> 1759440960 -0300	commit: criado arquivo guia para iniciarmos o processo de DESIGNSYSTEM.md permitindo a personalizacao das cores em dark mode e light mode
+031228776b9e3349c7f47f77b3a5ba112661e2b9 a55929da22c9f4b1b2246524765f7adc1131b161 Bruno Afonso <nobruel@gmail.com> 1759446033 -0300	commit: temas
+a55929da22c9f4b1b2246524765f7adc1131b161 c8c8eb8cdc4364fd9102ca92176df94429b1f34e Bruno Afonso <nobruel@gmail.com> 1759504475 -0300	commit: agora salva no banco de dados, mas ainda nao esta aplicando corretamente
+c8c8eb8cdc4364fd9102ca92176df94429b1f34e c0716b27719ffdf4cab549b456bf615c7a94dafd Bruno Afonso <nobruel@gmail.com> 1759505705 -0300	commit: salva e aplica
+c0716b27719ffdf4cab549b456bf615c7a94dafd 8c21c7e493721c58305782533006d8862c437f93 Bruno Afonso <nobruel@gmail.com> 1759507946 -0300	commit: tema salvo e aplicando 95%
+8c21c7e493721c58305782533006d8862c437f93 1cfc5221ec3d050db48a74e6d6e9ab70dfc89d46 Bruno Afonso <nobruel@gmail.com> 1759508291 -0300	commit: nova versao tema
+1cfc5221ec3d050db48a74e6d6e9ab70dfc89d46 87ec6278cf390ceca32df69b92a59cb9009c081c Bruno Afonso <nobruel@gmail.com> 1759508524 -0300	commit: novo tema 96%
+87ec6278cf390ceca32df69b92a59cb9009c081c 87ec6278cf390ceca32df69b92a59cb9009c081c Bruno Afonso <nobruel@gmail.com> 1759513340 -0300	checkout: moving from xpiria to entrega

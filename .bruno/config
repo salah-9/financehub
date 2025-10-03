@@ -1,0 +1,24 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[branch "bruno"]
+	vscode-merge-base = origin/bruno
+[branch "pulsofinanceiro"]
+	vscode-merge-base = origin/bruno
+[branch "instalador"]
+	vscode-merge-base = origin/pulsofinanceiro
+	remote = origin
+	merge = refs/heads/instalador
+[remote "origin"]
+	url = https://comunidadeaimakersclub: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@github.com/comunidadeaimakersclub/PersonalFinanceTracker.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "xpiria"]
+	remote = origin
+	merge = refs/heads/xpiria
+[branch "entrega"]
+	remote = origin
+	merge = refs/heads/entrega

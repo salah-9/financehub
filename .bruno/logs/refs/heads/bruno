@@ -1,0 +1,29 @@
+0000000000000000000000000000000000000000 4853546609621b7182814ee373884733e41e1494 Bruno Afonso <nobruel@gmail.com> 1752433023 -0300	branch: Created from refs/remotes/origin/bruno
+4853546609621b7182814ee373884733e41e1494 0dc8e3ab6a25529fc5db40f99c27413ded496d70 Bruno Afonso <nobruel@gmail.com> 1752433729 -0300	commit: sera
+0dc8e3ab6a25529fc5db40f99c27413ded496d70 7f8cd85d98b76f6c91aa561d278e23b2fbf986f9 Bruno Afonso <nobruel@gmail.com> 1752433941 -0300	commit: modificacao dentro do package para rodar
+7f8cd85d98b76f6c91aa561d278e23b2fbf986f9 5b84be6690ee7a320b5093e3f1ebafae43eb093a Bruno Afonso <nobruel@gmail.com> 1752434403 -0300	commit: personificar usuario inativo
+5b84be6690ee7a320b5093e3f1ebafae43eb093a e57f4819604a1bb22d35608e4bcbbced20057953 Bruno Afonso <nobruel@gmail.com> 1752446962 -0300	commit: fiz rodar local, agora vai no easypanel, sera?
+e57f4819604a1bb22d35608e4bcbbced20057953 4ee18473672d79430ce030dd9b16bb7d34a4368d Bruno Afonso <nobruel@gmail.com> 1752447512 -0300	commit: corrigindo arquivos faltantes quando vai pra producao
+4ee18473672d79430ce030dd9b16bb7d34a4368d 8e0c835345472fe89bcbb67ef3e33f572cb30f4c Bruno Afonso <nobruel@gmail.com> 1752448805 -0300	commit: o pai aqui ta detonando! ja vou fazer o esquema de migracao do banco agora
+8e0c835345472fe89bcbb67ef3e33f572cb30f4c 55943807a194fb8af73f8a172c7e490c3d49e841 Bruno Afonso <nobruel@gmail.com> 1752448982 -0300	commit: gerando ddl mas nao baixando, evolucao ducarvalho!
+55943807a194fb8af73f8a172c7e490c3d49e841 b390bb7b3214cf6ef48b8fafe8d0065df7b93bbd Bruno Afonso <nobruel@gmail.com> 1752449516 -0300	commit: database agora faz download dos DDLs de criacao
+b390bb7b3214cf6ef48b8fafe8d0065df7b93bbd 3970da329c97c586dcef90c1cc8f7568648bc671 Bruno Afonso <nobruel@gmail.com> 1752461867 -0300	commit: banco de dados sinronizados com todas as colunas, agora vai da boa?
+3970da329c97c586dcef90c1cc8f7568648bc671 db9e774a811f73665b20fc5748b0476a80c0a2b5 Bruno Afonso <nobruel@gmail.com> 1752463737 -0300	commit: versao moda foca
+db9e774a811f73665b20fc5748b0476a80c0a2b5 71c096f7a40c16f63a217bb4a589ecaed0d7fdf5 Bruno Afonso <nobruel@gmail.com> 1752469969 -0300	commit: agora sim é a mega versao massa
+71c096f7a40c16f63a217bb4a589ecaed0d7fdf5 88768b18f77d6c9823751c0f20cb7b844561d703 Bruno Afonso <nobruel@gmail.com> 1752471216 -0300	commit: problema de duplo hash quando o usuario e criado dentro do admin como superadmin
+88768b18f77d6c9823751c0f20cb7b844561d703 527e271ebee1a650d93542c27ac17fab92fbb244 Bruno Afonso <nobruel@gmail.com> 1752472037 -0300	commit: aqui nao jacare, modal nao vai me dar baile, segue em frente!
+527e271ebee1a650d93542c27ac17fab92fbb244 84166ae673786fb118451c8c15a22fcba52947aa Bruno Afonso <nobruel@gmail.com> 1752522632 -0300	commit: Drizzle adicionado
+84166ae673786fb118451c8c15a22fcba52947aa ea9c59251be79ac8c4d34b0a5c824129e43b8478 Bruno Afonso <nobruel@gmail.com> 1752524989 -0300	commit: usuario inativado API soft delete
+ea9c59251be79ac8c4d34b0a5c824129e43b8478 38fecb278bce7e5ad306d8265559328870862ee4 Bruno Afonso <nobruel@gmail.com> 1752525661 -0300	commit: agora o usuario poderá ser excluido com tudo que precisa, nao mais ficando com soft delete
+38fecb278bce7e5ad306d8265559328870862ee4 235366815746526ee88673a6f96879e74c43bd30 Bruno Afonso <nobruel@gmail.com> 1752526859 -0300	commit: changelog
+235366815746526ee88673a6f96879e74c43bd30 54bcf18fe7939dc544d5a6c66d38bc820f0e92dd Bruno Afonso <nobruel@gmail.com> 1752528747 -0300	commit: geracao de token
+54bcf18fe7939dc544d5a6c66d38bc820f0e92dd c39238c73b52d19e1c5b871b04a466decaa9b3cc Bruno Afonso <nobruel@gmail.com> 1752528930 -0300	commit: atualizacao experiencia ao excluir token api
+c39238c73b52d19e1c5b871b04a466decaa9b3cc e2052e601c2f9d45ee56ddcd9618cd0d815579b4 Bruno Afonso <nobruel@gmail.com> 1752529222 -0300	commit: correcao de overflow em dispositivos moveis nas listagens de api token
+e2052e601c2f9d45ee56ddcd9618cd0d815579b4 f09bfba35e3d78d438e74a5d7590c8bc7cf27ebb Bruno Afonso <nobruel@gmail.com> 1752529489 -0300	commit: responsividade
+f09bfba35e3d78d438e74a5d7590c8bc7cf27ebb 077fc1bb2054529c1b6ada535296952f73eb4e60 Bruno Afonso <nobruel@gmail.com> 1752557565 -0300	commit: ok
+077fc1bb2054529c1b6ada535296952f73eb4e60 9b5cdababf9d07e62db6a1260b4cc7cb8467309d Bruno Afonso <nobruel@gmail.com> 1752580701 -0300	commit: fix layout
+9b5cdababf9d07e62db6a1260b4cc7cb8467309d de937ea53bed43b84ed6277ea6dd2e0e672bc521 Bruno Afonso <nobruel@gmail.com> 1752581580 -0300	commit: logo
+de937ea53bed43b84ed6277ea6dd2e0e672bc521 ac44efafeb698b53ad9fc2aa3205762c8fb48712 Bruno Afonso <nobruel@gmail.com> 1752602824 -0300	commit: personalizacao logo
+ac44efafeb698b53ad9fc2aa3205762c8fb48712 d8c181202a07b8f201fb8b36b472205e64fa86bc Bruno Afonso <nobruel@gmail.com> 1752603193 -0300	commit: agora sim
+d8c181202a07b8f201fb8b36b472205e64fa86bc 66663075f56d43d70b7c82c453c4059767a2b809 Bruno Afonso <nobruel@gmail.com> 1752619742 -0300	commit: logo save and delete
+66663075f56d43d70b7c82c453c4059767a2b809 51e2d1533d60b5ec3d86ff164b4fdc4ac118cef6 Bruno Afonso <nobruel@gmail.com> 1752621045 -0300	commit: agora funciona
