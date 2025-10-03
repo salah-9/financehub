@@ -1,233 +1,425 @@
-# Finança Pessoal - Aplicação de Controle Financeiro
+# 💰 FinanceHub by XPIRIA
 
-Uma aplicação web completa para gerenciamento de finanças pessoais, com rastreamento de transações, categorização de despesas e receitas, relatórios financeiros e acesso via API externa.
+<div align="center">
 
-![Logo da Aplicação](generated-icon.png)
+![FinanceHub Logo](https://via.placeholder.com/200x60/FF64B3/FFFFFF?text=FinanceHub)
 
-## Índice
+**Sistema de Gestão Financeira Pessoal Inteligente**
 
-- [Visão Geral](#visão-geral)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias](#tecnologias)
-- [Requisitos](#requisitos)
-- [Instalação](#instalação)
-  - [Configuração do Banco de Dados](#configuração-do-banco-de-dados)
-  - [Instalação Local](#instalação-local)
-  - [Docker](#docker)
-  - [Heroku](#heroku)
-  - [Railway](#railway)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Guia da API](#guia-da-api)
-  - [Autenticação](#autenticação)
-  - [Endpoint de Transações](#endpoint-de-transações)
-  - [Endpoint de Categorias](#endpoint-de-categorias)
-  - [Endpoint da Carteira](#endpoint-da-carteira)
-  - [Dashboard e Relatórios](#dashboard-e-relatórios)
-- [Exemplos de Uso da API](#exemplos-de-uso-da-api)
-- [Dicas de Segurança](#dicas-de-segurança)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-## Visão Geral
+</div>
 
-Esta aplicação de finanças pessoais fornece uma plataforma completa para gerenciar suas finanças diárias. Com uma interface intuitiva, você pode acompanhar despesas, receitas, definir categorias personalizadas e visualizar relatórios detalhados sobre seus hábitos financeiros. A aplicação também oferece uma API completa para integração com outros sistemas.
+---
 
-## Funcionalidades
+## 📋 Índice
 
-- ✅ Gerenciamento de transações (receitas e despesas)
-- ✅ Categorização personalizada
-- ✅ Dashboard com resumo financeiro
-- ✅ Gráficos e relatórios
-- ✅ Múltiplos métodos de pagamento
-- ✅ Autenticação segura
-- ✅ API REST completa com suporte a tokens
-- ✅ Documentação Swagger integrada
+- [🌟 Sobre o Projeto](#-sobre-o-projeto)
+- [✨ Funcionalidades](#-funcionalidades)
+- [🛠️ Tecnologias](#️-tecnologias)
+- [📱 Arquitetura](#-arquitetura)
+- [🚀 Começando](#-começando)
+- [⚙️ Configuração](#️-configuração)
+- [🎨 Personalização](#-personalização)
+- [📊 Dashboard Admin](#-dashboard-admin)
+- [🔒 Segurança](#-segurança)
+- [📚 API Documentation](#-api-documentation)
+- [🤝 Contribuindo](#-contribuindo)
+- [📄 Licença](#-licença)
+- [👥 Equipe XPIRIA](#-equipe-xpiria)
 
-## Tecnologias
+---
 
-- **Frontend**: React, TypeScript, TailwindCSS, Shadcn/UI, React Query
-- **Backend**: Node.js, Express, TypeScript
-- **Banco de Dados**: PostgreSQL (Supabase)
-- **ORM**: Drizzle ORM
-- **Autenticação**: Passport.js, Tokens JWT
-- **Documentação**: Swagger/OpenAPI
-- **Validação**: Zod
+## 🌟 Sobre o Projeto
 
-## Requisitos
+O **FinanceHub** é uma solução SaaS completa para gestão financeira pessoal, desenvolvida pela **XPIRIA**. Combina tecnologia de ponta com uma interface moderna e intuitiva para oferecer controle total sobre suas finanças.
 
-- Node.js 18.x ou superior
-- PostgreSQL 15.x ou superior (ou uma conta Supabase)
-- NPM 9.x ou superior
+### 🎯 Missão
+Democratizar o acesso a ferramentas de gestão financeira profissional, tornando o controle financeiro pessoal simples, inteligente e acessível para todos.
 
-## Instalação
+### 🚀 Visão
+Ser a plataforma líder em gestão financeira pessoal, reconhecida pela inovação, segurança e experiência do usuário.
 
-### Configuração do Banco de Dados
+---
 
-A aplicação utiliza PostgreSQL como banco de dados. Você pode usar um banco de dados PostgreSQL local ou uma instância hospedada como Supabase.
+## ✨ Funcionalidades
 
-#### Usando Supabase (Recomendado)
+### 💳 Gestão Financeira Core
+- **Dashboard Inteligente** - Visão consolidada de receitas, despesas e saldo
+- **Transações** - Registro e categorização automatizada de movimentações
+- **Carteiras Múltiplas** - Gerencie diferentes contas e cartões
+- **Categorias Personalizáveis** - Sistema flexível de categorização
+- **Relatórios Avançados** - Análises detalhadas com gráficos interativos
+- **Lembretes Inteligentes** - Notificações para contas a pagar/receber
+- **Métodos de Pagamento** - Controle completo de cartões e contas
 
-1. Crie uma conta em [Supabase](https://supabase.com)
-2. Crie um novo projeto
-3. Acesse a página do seu projeto
-4. Vá para configurações > Database
-5. Copie a URI de conexão (Transaction pooler)
-6. Substitua `[YOUR-PASSWORD]` com a senha definida para o projeto
+### 🎨 Experiência do Usuário
+- **Temas Personalizáveis** - Light/Dark mode com temas customizados
+- **Logos Dinâmicos** - Troca automática baseada no tema
+- **Interface Responsiva** - Perfeita em desktop, tablet e mobile
+- **PWA Ready** - Funciona offline e pode ser instalado
+- **Animações Fluidas** - Transições suaves com Framer Motion
 
-### Instalação Local
+### 🛡️ Segurança & Administração
+- **Autenticação JWT** - Sistema seguro de login/logout
+- **Níveis de Usuário** - Super Admin, Admin e Usuário
+- **Impersonação** - Suporte seguro para debugging
+- **Auditoria Completa** - Logs de todas as ações importantes
+- **Backup Automático** - Proteção de dados integrada
 
-Siga estes passos para instalar a aplicação em seu ambiente local:
+### 🔧 Administração Avançada
+- **Painel SaaS** - Gestão completa de usuários e sistema
+- **Temas Globais** - Personalização visual para toda a aplicação
+- **Gerenciamento de Logos** - Upload e gestão de marca por tema
+- **Mensagens Personalizadas** - Welcome messages customizáveis
+- **Analytics** - Métricas de uso e performance
+
+---
+
+## 🛠️ Tecnologias
+
+### Frontend
+- **React 18** - Biblioteca de interface moderna
+- **TypeScript** - Tipagem estática para maior robustez
+- **Vite** - Build tool otimizado para desenvolvimento
+- **Tailwind CSS** - Framework CSS utilitário
+- **Framer Motion** - Animações e transições fluidas
+- **Radix UI** - Componentes acessíveis e customizáveis
+- **React Hook Form** - Formulários performáticos
+- **TanStack Query** - Gerenciamento de estado server-side
+- **Wouter** - Roteamento leve e eficiente
+- **Zod** - Validação de schemas TypeScript
+
+### Backend
+- **Node.js** - Runtime JavaScript server-side
+- **Express.js** - Framework web minimalista
+- **TypeScript** - Código backend tipado
+- **PostgreSQL** - Banco de dados relacional robusto
+- **Drizzle ORM** - ORM moderno e type-safe
+- **JWT** - Autenticação stateless
+- **Bcrypt** - Hash seguro de senhas
+- **Multer** - Upload de arquivos
+- **CORS** - Políticas de acesso cross-origin
+
+### DevOps & Infraestrutura
+- **Docker** - Containerização da aplicação
+- **Docker Compose** - Orquestração de serviços
+- **PostgreSQL** - Banco de dados em container
+- **Nginx** - Reverse proxy e servir estáticos
+- **PM2** - Process manager para Node.js
+
+---
+
+## 📱 Arquitetura
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │    Backend      │    │   Database      │
+│   (React/Vite)  │◄──►│  (Node.js/API)  │◄──►│  (PostgreSQL)   │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   • React 18    │    │   • Express.js  │    │   • ACID        │
+│   • TypeScript  │    │   • JWT Auth    │    │   • Relational  │
+│   • Tailwind    │    │   • Drizzle ORM │    │   • Migrations  │
+│   • TanStack    │    │   • Validation  │    │   • Indexes     │
+│   • Framer      │    │   • File Upload │    │   • Constraints │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### 🏗️ Estrutura do Projeto
+
+```
+financeiro/
+├── client/                 # Frontend React
+│   ├── src/
+│   │   ├── components/     # Componentes reutilizáveis
+│   │   ├── pages/          # Páginas da aplicação
+│   │   ├── hooks/          # Custom hooks
+│   │   ├── utils/          # Utilitários e helpers
+│   │   ├── lib/            # Configurações de bibliotecas
+│   │   └── styles/         # Estilos globais
+│   ├── public/             # Arquivos estáticos
+│   └── index.html          # Entry point
+├── server/                 # Backend Node.js
+│   ├── routes/             # Rotas da API
+│   ├── middleware/         # Middlewares personalizados
+│   ├── db/                 # Configuração do banco
+│   ├── migrations/         # Migrações do banco
+│   └── uploads/            # Arquivos enviados
+├── shared/                 # Código compartilhado
+│   └── schema.ts           # Schemas TypeScript
+├── docker-compose.yml      # Configuração Docker
+├── Dockerfile              # Imagem da aplicação
+└── README.md              # Este arquivo
+```
+
+---
+
+## 🚀 Começando
+
+### 📋 Pré-requisitos
+
+- **Node.js** 18+ 
+- **PostgreSQL** 14+
+- **Docker** (opcional, mas recomendado)
+- **Git**
+
+### 🔧 Instalação Rápida com Docker
 
 ```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/financa-pessoal.git
-cd financa-pessoal
+# 1. Clone o repositório
+git clone https://github.com/xpiria/financehub.git
+cd financehub
 
-# Instale as dependências
-npm install
-
-# Configure as variáveis de ambiente
+# 2. Configure as variáveis de ambiente
 cp .env.example .env
 # Edite o arquivo .env com suas configurações
 
-# Execute as migrações do banco de dados
+# 3. Inicie com Docker Compose
+docker-compose up -d
+
+# 4. Acesse a aplicação
+# Frontend: http://localhost:5173
+# Backend: http://localhost:3000
+```
+
+### 🛠️ Instalação Manual
+
+```bash
+# 1. Clone e instale dependências
+git clone https://github.com/xpiria/financehub.git
+cd financehub
+npm install
+
+# 2. Configure o banco PostgreSQL
+createdb financehub
+# Configure as variáveis no .env
+
+# 3. Execute as migrações
 npm run migrate
 
-# Inicie o servidor de desenvolvimento
+# 4. Inicie o desenvolvimento
 npm run dev
 ```
 
-Acesse `http://localhost:5000` no seu navegador.
+---
 
-### Docker
+## ⚙️ Configuração
 
-Para executar a aplicação usando Docker:
-
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/financa-pessoal.git
-cd financa-pessoal
-
-# Construa a imagem Docker
-docker build -t financa-pessoal .
-
-# Execute o contêiner
-docker run -p 5000:5000 --env-file .env financa-pessoal
-```
-
-#### Docker Compose
-
-Você também pode usar Docker Compose para configurar a aplicação com um banco de dados PostgreSQL:
-
-```yaml
-# docker-compose.yml
-version: '3.8'
-
-services:
-  app:
-    build: .
-    ports:
-      - "5000:5000"
-    environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/financas
-      - NODE_ENV=production
-    depends_on:
-      - db
-    restart: always
-
-  db:
-    image: postgres:15
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=financas
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
-```
-
-Execute com:
+### 🌍 Variáveis de Ambiente
 
 ```bash
-docker-compose up -d
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/financehub"
+
+# JWT
+JWT_SECRET="your-super-secret-key-here"
+
+# Upload
+MAX_FILE_SIZE=5242880  # 5MB
+UPLOAD_PATH="./uploads"
+
+# CORS
+CORS_ORIGIN="http://localhost:5173"
+
+# Email (opcional)
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT=587
+SMTP_USER="your-email@gmail.com"
+SMTP_PASS="your-app-password"
 ```
 
-### Heroku
+### 🎛️ Configuração do Banco
 
-Para implantar a aplicação no Heroku:
+```sql
+-- Criar usuário e banco
+CREATE USER financehub WITH PASSWORD 'sua_senha_segura';
+CREATE DATABASE financehub OWNER financehub;
+GRANT ALL PRIVILEGES ON DATABASE financehub TO financehub;
+```
+
+### 🚀 Scripts Disponíveis
 
 ```bash
-# Instale a CLI do Heroku
-npm install -g heroku
+# Desenvolvimento
+npm run dev          # Inicia frontend e backend
+npm run dev:client   # Apenas frontend
+npm run dev:server   # Apenas backend
 
-# Faça login no Heroku
-heroku login
+# Build
+npm run build        # Build de produção
+npm run build:client # Build do frontend
+npm run build:server # Build do backend
 
-# Crie um novo aplicativo
-heroku create financa-pessoal
+# Banco de dados
+npm run migrate      # Executa migrações
+npm run seed        # Popula dados iniciais
 
-# Adicione um banco de dados PostgreSQL
-heroku addons:create heroku-postgresql:hobby-dev
-
-# Configure variáveis de ambiente
-heroku config:set NODE_ENV=production
-
-# Implante a aplicação
-git push heroku main
-
-# Execute as migrações
-heroku run npm run migrate
+# Qualidade de código
+npm run lint        # ESLint
+npm run type-check  # TypeScript check
+npm run test        # Testes unitários
 ```
 
-### Railway
+---
 
-Para implantar a aplicação no Railway:
+## 🎨 Personalização
 
-1. Crie uma conta em [Railway](https://railway.app)
-2. Conecte seu repositório GitHub
-3. Crie um novo projeto a partir do repositório
-4. Adicione um serviço PostgreSQL no Railway
-5. Configure as variáveis de ambiente:
-   - `DATABASE_URL`: Obtido automaticamente do serviço PostgreSQL
-   - `NODE_ENV`: production
-6. Implante o aplicativo
-7. Configure o domínio personalizado (opcional)
+### 🎭 Sistema de Temas
 
-## Estrutura do Projeto
+O FinanceHub possui um sistema avançado de temas que permite:
 
-```
-financa-pessoal/
-├── client/                  # Código frontend
-│   ├── src/
-│   │   ├── components/      # Componentes React
-│   │   ├── hooks/           # Hooks personalizados
-│   │   ├── layouts/         # Layouts da aplicação
-│   │   ├── lib/             # Bibliotecas utilitárias
-│   │   ├── pages/           # Páginas da aplicação
-│   │   └── main.tsx         # Ponto de entrada do frontend
-├── server/                  # Código backend
-│   ├── controllers/         # Controladores da API
-│   ├── middleware/          # Middlewares Express
-│   ├── swagger/             # Documentação Swagger
-│   ├── index.ts             # Ponto de entrada do backend
-│   └── routes.ts            # Definição de rotas
-├── shared/                  # Código compartilhado
-│   └── schema.ts            # Definições de schema (Drizzle + Zod)
-├── components.json          # Configuração do Shadcn/UI
-├── drizzle.config.ts        # Configuração do Drizzle ORM
-├── package.json             # Dependências e scripts
-└── tsconfig.json            # Configuração do TypeScript
+- **Temas Separados**: Diferentes configurações para light/dark mode
+- **Editor Visual**: Interface drag-and-drop para criação de temas
+- **Preview em Tempo Real**: Veja mudanças instantaneamente
+- **Aplicação Global**: Temas se aplicam em toda a aplicação
+
+```typescript
+// Exemplo de configuração de tema
+interface ThemeConfig {
+  background: string;
+  foreground: string;
+  primary: string;
+  secondary: string;
+  // ... outras propriedades
+}
 ```
 
-## Guia da API
+### 🖼️ Logos Dinâmicos
 
-A API segue princípios RESTful e usa JSON para todas as solicitações e respostas. A documentação completa está disponível na rota `/docs` quando a aplicação está em execução.
+- Upload de logos específicos para light/dark mode
+- Troca automática baseada no tema atual
+- Fallback elegante para logo padrão
+- Suporte a múltiplos formatos (PNG, JPG, SVG)
 
-### Autenticação
+### 🔧 Customização de Interface
+
+```javascript
+// Configurações disponíveis
+const customizations = {
+  themes: 'Temas personalizados por modo',
+  logos: 'Logos específicos para cada tema',
+  messages: 'Mensagens de boas-vindas customizáveis',
+  branding: 'Personalização completa da marca'
+};
+```
+
+---
+
+## 📊 Dashboard Admin
+
+### 👥 Gestão de Usuários
+- **Listagem Completa**: Todos os usuários com filtros
+- **Perfis Detalhados**: Informações completas de cada usuário
+- **Níveis de Acesso**: Super Admin, Admin, Usuário
+- **Impersonação Segura**: Debug como qualquer usuário
+- **Auditoria**: Logs de ações administrativas
+
+### 📈 Analytics & Métricas
+- **Usuários Ativos**: Métricas de engajamento
+- **Transações**: Volume e frequência
+- **Performance**: Tempo de resposta e erros
+- **Crescimento**: Tendências de uso
+
+### 🛠️ Ferramentas Admin
+- **Backup do Sistema**: Exportação completa de dados
+- **Configurações Globais**: Ajustes do sistema
+- **Logs do Sistema**: Monitoramento em tempo real
+- **Manutenção**: Ferramentas de diagnóstico
+
+---
+
+## 🔒 Segurança
+
+### 🛡️ Autenticação & Autorização
+- **JWT Tokens**: Autenticação stateless segura
+- **Refresh Tokens**: Renovação automática de sessões
+- **Rate Limiting**: Proteção contra ataques
+- **CORS**: Políticas de acesso rigorosas
+
+### 🔐 Proteção de Dados
+- **Criptografia**: Senhas hasheadas com bcrypt
+- **Sanitização**: Inputs validados e sanitizados
+- **SQL Injection**: Proteção via prepared statements
+- **XSS Protection**: Headers de segurança configurados
+
+### 📋 Compliance
+- **LGPD Ready**: Preparado para conformidade
+- **Audit Logs**: Rastreabilidade completa
+- **Data Export**: Ferramentas de portabilidade
+- **Data Deletion**: Remoção segura de dados
+
+---
+
+## 📚 API Documentation
+
+### 🔗 Endpoints Principais
+
+#### Autenticação
+```http
+POST /api/auth/login     # Login do usuário
+POST /api/auth/register  # Registro de novo usuário
+POST /api/auth/logout    # Logout seguro
+GET  /api/auth/me        # Informações do usuário atual
+```
+
+#### Transações
+```http
+GET    /api/transactions       # Listar transações
+POST   /api/transactions       # Criar transação
+PUT    /api/transactions/:id   # Atualizar transação
+DELETE /api/transactions/:id   # Deletar transação
+```
+
+#### Categorias
+```http
+GET    /api/categories         # Listar categorias
+POST   /api/categories         # Criar categoria
+PUT    /api/categories/:id     # Atualizar categoria
+DELETE /api/categories/:id     # Deletar categoria
+```
+
+#### Temas (Admin)
+```http
+GET    /api/themes             # Listar temas
+POST   /api/themes             # Criar tema
+PUT    /api/themes/:id         # Atualizar tema
+GET    /api/themes/active/:mode # Tema ativo por modo
+POST   /api/themes/:id/activate-light # Ativar para light
+POST   /api/themes/:id/activate-dark  # Ativar para dark
+```
+
+### 📋 Schemas de Resposta
+
+```typescript
+// Resposta padrão da API
+interface ApiResponse<T> {
+  success: boolean;
+  data?: T;
+  error?: string;
+  message?: string;
+}
+
+// Modelo de transação
+interface Transaction {
+  id: number;
+  tipo: 'receita' | 'despesa';
+  valor: number;
+  descricao: string;
+  categoria_id: number;
+  data_transacao: string;
+  created_at: string;
+  updated_at: string;
+}
+```
+
+### 🔑 Autenticação
 
 A API suporta dois métodos de autenticação:
 
@@ -245,92 +437,17 @@ Para obter um token de API:
 
 Inclua o token no cabeçalho HTTP `apikey` em todas as solicitações:
 
-```
+```http
 apikey: fin_seu_token_aqui
 ```
 
-### Endpoint de Transações
+### 📝 Exemplos de Uso
 
-Operações relacionadas a transações (receitas e despesas).
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/transactions` | Listar todas as transações |
-| GET | `/api/transactions/recent` | Obter transações recentes |
-| GET | `/api/transactions/:id` | Obter detalhes de uma transação |
-| POST | `/api/transactions` | Criar uma nova transação |
-| PUT | `/api/transactions/:id` | Atualizar uma transação (substituição completa) |
-| PATCH | `/api/transactions/:id` | Atualizar uma transação (atualização parcial) |
-| DELETE | `/api/transactions/:id` | Excluir uma transação |
-
-### Endpoint de Categorias
-
-Operações relacionadas a categorias de transações.
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/categories` | Listar todas as categorias |
-| GET | `/api/categories/:id` | Obter detalhes de uma categoria |
-| POST | `/api/categories` | Criar uma nova categoria |
-| PUT | `/api/categories/:id` | Atualizar uma categoria |
-| DELETE | `/api/categories/:id` | Excluir uma categoria |
-
-### Endpoint da Carteira
-
-Operações relacionadas à carteira do usuário.
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/wallet/current` | Obter detalhes da carteira atual |
-| PUT | `/api/wallet/current` | Atualizar a carteira atual |
-
-### Dashboard e Relatórios
-
-Endpoints para obtenção de resumos e relatórios financeiros.
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/dashboard/summary` | Obter resumo do dashboard |
-
-## Exemplos de Uso da API
-
-### Autenticação
-
-```javascript
-// Exemplo usando fetch
-async function login(email, password) {
-  const response = await fetch('http://localhost:5000/api/auth/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      email: email,
-      senha: password
-    })
-  });
-
-  return await response.json();
-}
-
-// Exemplo usando um token de API
-async function getTransactionsWithToken(token) {
-  const response = await fetch('http://localhost:5000/api/transactions', {
-    method: 'GET',
-    headers: {
-      'apikey': token
-    }
-  });
-
-  return await response.json();
-}
-```
-
-### Criar uma Transação
+#### Criar uma Transação
 
 ```javascript
 async function createTransaction(token, transactionData) {
-  const response = await fetch('http://localhost:5000/api/transactions', {
+  const response = await fetch('http://localhost:3000/api/transactions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -339,12 +456,9 @@ async function createTransaction(token, transactionData) {
     body: JSON.stringify({
       descricao: 'Compras do supermercado',
       valor: '150.00',
-      tipo: 'Despesa',
+      tipo: 'despesa',
       categoria_id: 1,
-      carteira_id: 1,
-      data_transacao: '2025-05-17 14:30:00',
-      metodo_pagamento: 'Cartão de crédito',
-      status: 'Efetivada'
+      data_transacao: '2025-01-03T14:30:00Z'
     })
   });
 
@@ -352,97 +466,105 @@ async function createTransaction(token, transactionData) {
 }
 ```
 
-### Obter Resumo do Dashboard
-
-```javascript
-async function getDashboardSummary(token) {
-  const response = await fetch('http://localhost:5000/api/dashboard/summary', {
-    method: 'GET',
-    headers: {
-      'apikey': token
-    }
-  });
-
-  return await response.json();
-}
-```
-
-### Exemplo com cURL
+#### Obter Resumo do Dashboard
 
 ```bash
-# Login
-curl -X POST http://localhost:5000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"usuario@exemplo.com","senha":"senha123"}'
-
-# Obter transações com token
-curl http://localhost:5000/api/transactions \
+# Exemplo com cURL
+curl http://localhost:3000/api/dashboard/summary \
   -H "apikey: fin_seu_token_aqui"
-
-# Criar uma transação
-curl -X POST http://localhost:5000/api/transactions \
-  -H "Content-Type: application/json" \
-  -H "apikey: fin_seu_token_aqui" \
-  -d '{
-    "descricao": "Salário mensal",
-    "valor": "3500.00",
-    "tipo": "Receita",
-    "categoria_id": 12,
-    "carteira_id": 1,
-    "data_transacao": "2025-05-15 09:00:00",
-    "status": "Efetivada"
-  }'
 ```
-
-## Dicas de Segurança
-
-1. **Proteja seus tokens de API**: Trate os tokens como senhas - nunca os compartilhe ou inclua em código público.
-2. **Use HTTPS**: Em produção, sempre use HTTPS para criptografar as comunicações.
-3. **Alternância de tokens**: Alterne regularmente seus tokens de API para limitar o impacto de uma exposição acidental.
-4. **Limitação de taxa**: A API implementa limitação de taxa para evitar uso abusivo.
-5. **Validação de entrada**: A aplicação valida todas as entradas, mas sempre filtre dados externos em integrações.
-
-## Contribuição
-
-Contribuições são bem-vindas! Siga estas etapas para contribuir:
-
-1. Faça um fork do repositório
-2. Crie um branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
-3. Faça commit das suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Faça push para o branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
-
-## Agradecimentos
-
-Um agradecimento especial à comunidade AI Makers Club pelo suporte, feedback e contribuições que ajudaram a tornar este projeto possível.
-
-## Bruno
 
 ---
 
-## 🐳 Rodando com Docker
+## 🤝 Contribuindo
 
-Você pode rodar a aplicação facilmente usando Docker. Siga os passos abaixo:
+Agradecemos seu interesse em contribuir com o FinanceHub! 
 
-```sh
-# 1. Construa a imagem Docker
-docker build -t financa-pessoal .
+### 📝 Como Contribuir
 
-# 2. Execute o container (usando as variáveis do seu .env)
-docker run -p 5000:5000 --env-file .env financa-pessoal
+1. **Fork** o projeto
+2. **Crie** uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. **Commit** suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** para a branch (`git push origin feature/AmazingFeature`)
+5. **Abra** um Pull Request
+
+### 🎯 Diretrizes
+
+- **Código**: Siga os padrões TypeScript e ESLint
+- **Commits**: Use mensagens descritivas
+- **Testes**: Adicione testes para novas funcionalidades
+- **Documentação**: Mantenha a documentação atualizada
+
+### 🐛 Reportando Bugs
+
+Use as [GitHub Issues](https://github.com/xpiria/financehub/issues) com:
+- **Descrição clara** do problema
+- **Passos para reproduzir**
+- **Comportamento esperado vs atual**
+- **Screenshots** se aplicável
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+```
+MIT License
+
+Copyright (c) 2024 XPIRIA
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 ```
 
-O Dockerfile já executa:
-- `npm install` para instalar as dependências
-- `npm run build` para buildar o frontend/backend
-- `npm start` para rodar a aplicação
+---
 
-- O backend e o frontend serão servidos juntos na porta 5000.
-- Certifique-se de que o arquivo `.env` está corretamente configurado na raiz do projeto.
-- Para ambientes de produção, utilize variáveis seguras e um banco de dados acessível pelo container.
+## 👥 Equipe XPIRIA
 
-Se quiser rodar com Docker Compose (incluindo banco de dados PostgreSQL), veja o exemplo de `docker-compose.yml` na seção de instalação acima.
+<div align="center">
+
+### 🚀 Desenvolvido com ❤️ pela equipe XPIRIA
+
+**XPIRIA** - *Transformando ideias em soluções digitais inovadoras*
+
+[![Website](https://img.shields.io/badge/Website-XPIRIA.com-blue?style=for-the-badge)](https://xpiria.com)
+[![Email](https://img.shields.io/badge/Email-contact@xpiria.com-red?style=for-the-badge)](mailto:contact@xpiria.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-XPIRIA-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/company/xpiria)
+
+---
+
+### 📞 Suporte & Contato
+
+- **Suporte Técnico**: [support@xpiria.com](mailto:support@xpiria.com)
+- **Parcerias**: [partnerships@xpiria.com](mailto:partnerships@xpiria.com)
+- **Comercial**: [sales@xpiria.com](mailto:sales@xpiria.com)
+
+---
+
+### 🌟 Conecte-se Conosco
+
+[![GitHub](https://img.shields.io/badge/GitHub-XPIRIA-black?style=for-the-badge&logo=github)](https://github.com/xpiria)
+[![Twitter](https://img.shields.io/badge/Twitter-@XPIRIA-blue?style=for-the-badge&logo=twitter)](https://twitter.com/xpiria)
+[![Instagram](https://img.shields.io/badge/Instagram-@XPIRIA-purple?style=for-the-badge&logo=instagram)](https://instagram.com/xpiria)
+
+</div>
+
+---
+
+<div align="center">
+
+**⭐ Se este projeto foi útil para você, considere dar uma estrela no GitHub!**
+
+**🚀 FinanceHub - Sua jornada financeira começa aqui.**
+
+*Feito com 💜 pela equipe XPIRIA*
+
+</div>
