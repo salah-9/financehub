@@ -543,6 +543,7 @@ copies or substantial portions of the Software.
 
 ### 📞 Suporte & Contato
 
+- **Desenvolvedor Principal**: [bruno@xpiria.com.br](mailto:bruno@xpiria.com.br)
 - **Suporte Técnico**: [support@xpiria.com](mailto:support@xpiria.com)
 - **Parcerias**: [partnerships@xpiria.com](mailto:partnerships@xpiria.com)
 - **Comercial**: [sales@xpiria.com](mailto:sales@xpiria.com)
