@@ -24,20 +24,25 @@ export async function runInitialMigration({ dropAll = false }: { dropAll?: boole
   // Criar pastas necessárias com permissões corretas
   console.log('📁 Criando pastas de upload com permissões corretas...');
   
-  const publicDir = path.resolve(process.cwd(), 'public');
-  const chartsDir = path.resolve(publicDir, 'charts');
-  const reportsDir = path.resolve(publicDir, 'reports');
+  // Criar ambas as estruturas de pastas (dev e prod)
+  const publicPaths = ['public', 'dist/public'];
   
-  // Criar diretórios se não existirem
-  [publicDir, chartsDir, reportsDir].forEach(dir => {
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true, mode: 0o755 });
-      console.log(`✅ Pasta criada: ${dir}`);
-    } else {
-      // Garantir permissões corretas mesmo se a pasta já existe
-      fs.chmodSync(dir, 0o755);
-      console.log(`✅ Permissões ajustadas: ${dir}`);
-    }
+  publicPaths.forEach(publicPath => {
+    const publicDir = path.resolve(process.cwd(), publicPath);
+    const chartsDir = path.resolve(publicDir, 'charts');
+    const reportsDir = path.resolve(publicDir, 'reports');
+    
+    // Criar diretórios se não existirem
+    [publicDir, chartsDir, reportsDir].forEach(dir => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true, mode: 0o755 });
+        console.log(`✅ Pasta criada: ${dir}`);
+      } else {
+        // Garantir permissões corretas mesmo se a pasta já existe
+        fs.chmodSync(dir, 0o755);
+        console.log(`✅ Permissões ajustadas: ${dir}`);
+      }
+    });
   });
   
   console.log('✅ Pastas de upload configuradas com sucesso!');

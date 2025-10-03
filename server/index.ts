@@ -38,9 +38,16 @@ process.env.TZ = 'America/Sao_Paulo';
 function setupUploadDirectories() {
   console.log('📁 Configurando pastas de upload...');
   
-  const publicDir = resolve(process.cwd(), 'public');
+  // Em produção, usar dist/public, em desenvolvimento usar public/
+  const isProduction = process.env.NODE_ENV === 'production';
+  const publicPath = isProduction ? 'dist/public' : 'public';
+  
+  const publicDir = resolve(process.cwd(), publicPath);
   const chartsDir = resolve(publicDir, 'charts');
   const reportsDir = resolve(publicDir, 'reports');
+  
+  console.log(`📍 Modo: ${isProduction ? 'PRODUÇÃO' : 'DESENVOLVIMENTO'}`);
+  console.log(`📂 Diretório público: ${publicDir}`);
   
   // Criar diretórios se não existirem
   [publicDir, chartsDir, reportsDir].forEach(dir => {
