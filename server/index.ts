@@ -1,6 +1,6 @@
 // Carregar variáveis de ambiente ANTES de qualquer importação
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { readFileSync, existsSync, mkdirSync, chmodSync } from 'fs';
+import { join, resolve } from 'path';
 
 try {
   const envPath = join(process.cwd(), '.env');
@@ -33,6 +33,36 @@ import { setupRedirect } from "./middleware/setup.middleware";
 
 // Configurar timezone global da aplicação para São Paulo
 process.env.TZ = 'America/Sao_Paulo';
+
+// Configurar pastas de upload com permissões corretas
+function setupUploadDirectories() {
+  console.log('📁 Configurando pastas de upload...');
+  
+  const publicDir = resolve(process.cwd(), 'public');
+  const chartsDir = resolve(publicDir, 'charts');
+  const reportsDir = resolve(publicDir, 'reports');
+  
+  // Criar diretórios se não existirem
+  [publicDir, chartsDir, reportsDir].forEach(dir => {
+    try {
+      if (!existsSync(dir)) {
+        mkdirSync(dir, { recursive: true, mode: 0o755 });
+        console.log(`✅ Pasta criada: ${dir}`);
+      } else {
+        // Garantir permissões corretas mesmo se a pasta já existe
+        chmodSync(dir, 0o755);
+        console.log(`✅ Permissões ajustadas: ${dir}`);
+      }
+    } catch (error) {
+      console.error(`❌ Erro ao configurar pasta ${dir}:`, error);
+    }
+  });
+  
+  console.log('✅ Pastas de upload configuradas!');
+}
+
+// Configurar pastas no startup
+setupUploadDirectories();
 
 const app = express();
 app.use(express.json());
