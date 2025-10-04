@@ -6,7 +6,7 @@ import { WhatsAppChatModal } from '@/components/whatsapp-chat-modal';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 import { useNotifications } from '@/hooks/use-notifications';
-import { Trash2, AlertTriangle, Palette, MessageSquare, Settings, Smartphone, CheckCircle2, XCircle, Phone, User, Wifi, WifiOff, Loader2, ChevronDown, ChevronRight, Link2, RefreshCw, Users, Plus, Play, Square, Edit2, QrCode, Key, MessageCircle, Bell, Copy, RotateCcw, Sparkles } from 'lucide-react';
+import { Trash2, AlertTriangle, Palette, MessageSquare, Settings, Smartphone, CheckCircle2, XCircle, Phone, User, Wifi, WifiOff, Loader2, ChevronDown, ChevronRight, Link2, RefreshCw, Users, Plus, Play, Square, Edit2, QrCode, Key, MessageCircle, Bell, Copy, RotateCcw, Sparkles, Paintbrush, Activity } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
@@ -395,6 +395,7 @@ export default function CustomizePage() {
   const [isDeleting, setIsDeleting] = useState(false);
   const { theme } = useTheme();
   const [activeTab, setActiveTab] = useState("personalizar");
+  const [colorizingCategories, setColorizingCategories] = useState(false);
   
   // Estados para mensagens de boas vindas
   const [welcomeMessages, setWelcomeMessages] = useState<any>({});
@@ -792,6 +793,42 @@ export default function CustomizePage() {
         description: 'Não foi possível copiar a URL',
         variant: 'destructive'
       });
+    }
+  };
+
+  // Colorizar categorias globais
+  const handleColorizeCategories = async () => {
+    try {
+      setColorizingCategories(true);
+      const response = await fetch("/api/admin/categories/colorize-global", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include"
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        toast({
+          title: "Sucesso!",
+          description: result.message || "Categorias globais colorizadas com sucesso!",
+        });
+      } else {
+        const error = await response.json();
+        toast({
+          title: "Erro",
+          description: error.error || "Erro ao colorizar categorias globais",
+          variant: "destructive",
+        });
+      }
+    } catch (error: any) {
+      console.error("Erro ao colorizar categorias:", error);
+      toast({
+        title: "Erro",
+        description: "Erro de conexão ao colorizar categorias globais",
+        variant: "destructive",
+      });
+    } finally {
+      setColorizingCategories(false);
     }
   };
 
@@ -1607,7 +1644,7 @@ export default function CustomizePage() {
                   )}
                 >
                   <Palette className="h-4 w-4" />
-                  Personalizar SaaS
+                  Personalizar LOGO
                 </button>
                 <button
                   onClick={() => setActiveTab("mensagens")}
@@ -1628,6 +1665,16 @@ export default function CustomizePage() {
                 >
                   <Sparkles className="h-4 w-4" />
                   Personalizar Cores
+                </button>
+                <button
+                  onClick={() => setActiveTab("categorias")}
+                  className={cn(
+                    "w-full text-left px-4 py-3 hover:bg-muted transition-colors flex items-center gap-3",
+                    activeTab === "categorias" && "bg-muted border-r-2 border-primary"
+                  )}
+                >
+                  <Paintbrush className="h-4 w-4" />
+                  Colorizar Categorias
                 </button>
                 {false && (
                 <button
@@ -1663,7 +1710,7 @@ export default function CustomizePage() {
           {activeTab === "personalizar" && (
             <Card className={`glass-card neon-border ${theme === 'light' ? 'bg-white border border-gray-200' : ''}`}>
               <CardHeader>
-                <CardTitle className={`${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>Personalizar SaaS</CardTitle>
+                <CardTitle className={`${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>Personalizar LOGO</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
@@ -2140,6 +2187,64 @@ export default function CustomizePage() {
             <div>
               <ThemeCustomizer />
             </div>
+          )}
+          {activeTab === "categorias" && (
+            <Card className={`glass-card neon-border ${theme === 'light' ? 'bg-white border border-gray-200' : ''}`}>
+              <CardHeader>
+                <CardTitle className={`${theme === 'light' ? 'text-gray-900' : 'text-white'} flex items-center gap-2`}>
+                  <Paintbrush className="h-5 w-5" />
+                  Colorizar Categorias Globais
+                </CardTitle>
+                <CardDescription className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-400'}`}>
+                  Ferramenta para aplicar cores padrão nas categorias globais do sistema
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className={`p-4 rounded-lg border ${theme === 'light' ? 'bg-blue-50 border-blue-200' : 'bg-blue-900/20 border-blue-500/30'}`}>
+                    <h4 className={`font-semibold mb-2 ${theme === 'light' ? 'text-blue-900' : 'text-blue-200'}`}>
+                      O que esta ferramenta faz?
+                    </h4>
+                    <ul className={`text-sm space-y-1 ${theme === 'light' ? 'text-blue-800' : 'text-blue-300'}`}>
+                      <li>• Aplica cores específicas para cada tipo de categoria (Alimentação, Transporte, etc.)</li>
+                      <li>• Corrige categorias que estão sem cor ou com cores inadequadas</li>
+                      <li>• Usa um mapeamento pré-definido de cores por categoria</li>
+                      <li>• Afeta apenas as categorias globais do sistema</li>
+                    </ul>
+                  </div>
+
+                  <div className="flex items-center justify-center p-8">
+                    <Button
+                      onClick={handleColorizeCategories}
+                      disabled={colorizingCategories}
+                      size="lg"
+                      className="w-full max-w-md"
+                    >
+                      {colorizingCategories ? (
+                        <>
+                          <Activity className="mr-2 h-5 w-5 animate-spin" />
+                          Aplicando cores...
+                        </>
+                      ) : (
+                        <>
+                          <Paintbrush className="mr-2 h-5 w-5" />
+                          Colorizar Categorias Globais
+                        </>
+                      )}
+                    </Button>
+                  </div>
+
+                  <div className={`text-xs text-center ${theme === 'light' ? 'text-gray-500' : 'text-gray-400'}`}>
+                    <p className="mb-1">
+                      <strong>Atenção:</strong> Esta ação irá sobrescrever as cores atuais das categorias globais.
+                    </p>
+                    <p>
+                      As categorias dos usuários não serão afetadas.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           )}
 
           {false && activeTab === "waha" && (

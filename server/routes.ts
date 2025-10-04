@@ -230,6 +230,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     checkImpersonation,
     categoryController.deleteCategory,
   );
+  
+  // Admin route for colorizing global categories (superadmin only)
+  app.post(
+    "/api/admin/categories/colorize-global",
+    combinedAuth,
+    checkImpersonation,
+    requireSuperAdmin,
+    categoryController.colorizeGlobalCategories,
+  );
 
   // Payment Method routes
   app.get("/api/payment-methods", combinedAuth, checkImpersonation, paymentMethodController.getPaymentMethods);

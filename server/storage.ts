@@ -587,10 +587,9 @@ export class DbStorage implements IStorage {
     lastYear.setFullYear(now.getFullYear() - 1); // Últimos 12 meses de dados
     
     try {
-      // Extract months as strings (e.g., "Jan", "Feb") and calculate totals
+      // Extract months as numbers and convert to Portuguese month names
       const monthlyData = await db.execute(sql`
         SELECT 
-          TO_CHAR(data_transacao, 'Mon') as month,
           EXTRACT(MONTH FROM data_transacao) as month_num,
           EXTRACT(YEAR FROM data_transacao) as year,
           SUM(CASE WHEN tipo = 'Receita' THEN valor ELSE 0 END) as income,
@@ -598,11 +597,24 @@ export class DbStorage implements IStorage {
         FROM transacoes
         WHERE 
           carteira_id = ${walletId}
-        GROUP BY month, month_num, year
+        GROUP BY month_num, year
         ORDER BY year, month_num
       `);
       
-      return monthlyData;
+      // Convert month numbers to Portuguese month names
+      const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+      
+      const convertedData = monthlyData.map((row: any) => ({
+        month: monthNames[Number(row.month_num) - 1],
+        month_num: Number(row.month_num),
+        year: Number(row.year),
+        income: Number(row.income) || 0,
+        expense: Number(row.expense) || 0
+      }));
+      
+      console.log("📊 Monthly data converted:", JSON.stringify(convertedData, null, 2));
+      
+      return convertedData;
     } catch (error) {
       console.error("Error in getMonthlyTransactionSummary:", error);
       return [];

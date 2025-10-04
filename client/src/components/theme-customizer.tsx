@@ -464,6 +464,7 @@ export function ThemeCustomizer() {
     loadActiveThemes();
   };
 
+
   // Ativar tema para modo específico
   const activateThemeForMode = async (themeId: number, mode: 'light' | 'dark') => {
     try {

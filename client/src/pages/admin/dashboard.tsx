@@ -187,6 +187,7 @@ export default function AdminDashboard() {
     }
   };
 
+
   const getUserStatusBadge = (user: User) => {
     // Seguindo as regras definidas em REGRASUSUARIO.md
     if (user.data_cancelamento) {
@@ -319,6 +320,7 @@ export default function AdminDashboard() {
           </CardContent>
         </Card>
       </div>
+
 
       {/* Gráficos de Analytics */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
