@@ -1,6 +1,34 @@
 {
-  "currentVersion": "0.0.18",
+  "currentVersion": "0.0.19",
   "versions": [
+    {
+      "version": "0.0.19",
+      "date": "2025-01-15",
+      "title": "Colorização de Categorias, Correções de Relatórios e Melhorias de Interface",
+      "description": "Nova ferramenta administrativa para colorização automática de categorias, correção de problemas nos relatórios financeiros, reorganização do painel administrativo e diversas melhorias de interface e usabilidade.",
+      "features": [
+        "Nova ferramenta administrativa 'Colorizar Categorias' no menu lateral de /admin/customize",
+        "Interface dedicada para aplicar cores padrão nas categorias globais do sistema",
+        "Mapeamento automático de cores por tipo de categoria (Alimentação, Transporte, Saúde, etc.)",
+        "Reorganização do menu administrativo com seção dedicada para ferramentas de sistema",
+        "Suporte para configuração personalizada de credenciais administrativas via variáveis de ambiente"
+      ],
+      "improvements": [
+        "Relatórios 'Receitas vs Despesas' e 'Fluxo de Caixa' agora exibem corretamente dados do mês atual",
+        "Conversão automática de nomes de meses do PostgreSQL para português nos gráficos",
+        "Texto do menu 'Personalizar SaaS' alterado para 'Personalizar LOGO' para maior clareza",
+        "Configuração automática de permissões para pastas de upload durante inicialização do sistema",
+        "Melhorada compatibilidade de uploads de logo em ambiente de produção",
+        "Interface administrativa reorganizada com navegação mais intuitiva"
+      ],
+      "fixes": [
+        "Corrigido problema de gráficos vazios nos relatórios devido incompatibilidade de nomes de meses",
+        "Eliminados warnings de validação DOM em componentes de relatórios (Skeleton dentro de <p>)",
+        "Corrigidas permissões de pastas de upload que causavam falhas em produção",
+        "Simplificada lógica de filtro de dados nos relatórios removendo normalizações complexas",
+        "Corrigida estrutura HTML inválida substituindo <p> por <div> onde necessário"
+      ]
+    },
     {
       "version": "0.0.18",
       "date": "2025-09-14",

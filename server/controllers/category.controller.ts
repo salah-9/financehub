@@ -206,3 +206,62 @@ export async function deleteCategory(req: Request, res: Response) {
     res.status(500).json({ message: "Erro ao excluir categoria" });
   }
 }
+
+// Função para colorir categorias globais (apenas superadmin)
+export async function colorizeGlobalCategories(req: Request, res: Response) {
+  try {
+    const userId = req.user?.id;
+    const userType = req.user?.tipo_usuario;
+
+    if (!userId || userType !== 'super_admin') {
+      return res.status(403).json({ error: "Acesso negado. Apenas superadmins podem colorir categorias globais." });
+    }
+
+    // Cores padrão para diferentes tipos de categorias
+    const defaultColors: { [key: string]: string } = {
+      'Alimentação': '#FF6B6B',     // Vermelho
+      'Transporte': '#4ECDC4',      // Azul-verde
+      'Moradia': '#45B7D1',         // Azul
+      'Saúde': '#96CEB4',           // Verde claro
+      'Educação': '#FFEAA7',        // Amarelo
+      'Lazer': '#DDA0DD',           // Roxo claro
+      'Vestuário': '#F8BBD9',       // Rosa
+      'Serviços': '#FFB74D',        // Laranja
+      'Impostos': '#A1887F',        // Marrom
+      'Imposto': '#A1887F',         // Marrom (variação)
+      'Investimento': '#FFC107',    // Dourado
+      'Investimentos': '#FFC107',   // Dourado (variação)
+      'Doações': '#E91E63',         // Rosa escuro
+      'Pets': '#8BC34A',            // Verde
+      'Viagem': '#9C27B0',          // Roxo
+      'Outros': '#90A4AE',          // Cinza
+      'Salário': '#4CAF50',         // Verde
+      'Freelance': '#8BC34A',       // Verde claro
+      'Presentes': '#E91E63',       // Rosa escuro
+      'Reembolso': '#9C27B0'        // Roxo
+    };
+
+    // Buscar todas as categorias globais usando storage
+    const globalCategories = await storage.getGlobalCategories();
+
+    let updatedCount = 0;
+
+    // Atualizar cores das categorias
+    for (const category of globalCategories) {
+      const newColor = defaultColors[category.nome] || 
+                      (category.tipo === 'Receita' ? '#4CAF50' : '#FF6B6B');
+      
+      await storage.updateCategory(category.id, { cor: newColor });
+      updatedCount++;
+    }
+
+    res.json({ 
+      message: `${updatedCount} categorias globais foram colorizadas com sucesso!`,
+      updatedCount 
+    });
+
+  } catch (error) {
+    console.error("Erro ao colorizar categorias globais:", error);
+    res.status(500).json({ error: "Erro interno do servidor" });
+  }
+}

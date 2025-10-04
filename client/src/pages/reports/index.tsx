@@ -105,24 +105,13 @@ export default function ReportsPage() {
 
     if (period === "month") {
       // Filtrar apenas o mês atual
-      // O backend retorna "Sep" enquanto esperamos "Set" para setembro
       const currentMonthName = monthNames[currentMonth];
       
       // Procurar pelo mês atual nos dados
-      // Setembro pode vir como "Sep" ou "Set"
-      const monthData = allData.find(d => {
-        // Normalizar comparação - Sep -> Set
-        const normalizedMonth = d.month === "Sep" ? "Set" : d.month;
-        return normalizedMonth === currentMonthName;
-      });
+      const monthData = allData.find(d => d.month === currentMonthName);
       
       if (monthData) {
-        // Normalizar o nome do mês antes de retornar
-        const normalizedData = {
-          ...monthData,
-          month: monthData.month === "Sep" ? "Set" : monthData.month
-        };
-        return [normalizedData];
+        return [monthData];
       }
       
       // Caso contrário, retornar estrutura vazia para o mês atual
@@ -136,18 +125,11 @@ export default function ReportsPage() {
         const targetMonth = (currentMonth - i + 12) % 12;
         const targetMonthName = monthNames[targetMonth];
         
-        // Procurar dados com normalização
-        const monthData = allData.find(d => {
-          const normalizedMonth = d.month === "Sep" ? "Set" : d.month;
-          return normalizedMonth === targetMonthName;
-        });
+        // Procurar dados
+        const monthData = allData.find(d => d.month === targetMonthName);
         
         if (monthData) {
-          // Normalizar o nome do mês
-          quarterData.push({
-            ...monthData,
-            month: monthData.month === "Sep" ? "Set" : monthData.month
-          });
+          quarterData.push(monthData);
         } else {
           quarterData.push({ month: targetMonthName, income: 0, expense: 0 });
         }
@@ -158,16 +140,10 @@ export default function ReportsPage() {
     } else if (period === "year") {
       // Para o ano completo, garantir que todos os 12 meses estejam presentes
       const yearData = monthNames.map(monthName => {
-        const monthData = allData.find(d => {
-          const normalizedMonth = d.month === "Sep" ? "Set" : d.month;
-          return normalizedMonth === monthName;
-        });
+        const monthData = allData.find(d => d.month === monthName);
         
         if (monthData) {
-          return {
-            ...monthData,
-            month: monthData.month === "Sep" ? "Set" : monthData.month
-          };
+          return monthData;
         }
         
         return { month: monthName, income: 0, expense: 0 };
@@ -176,11 +152,8 @@ export default function ReportsPage() {
       return yearData;
     }
     
-    // Fallback - retornar todos os dados disponíveis com normalização
-    return allData.map(d => ({
-      ...d,
-      month: d.month === "Sep" ? "Set" : d.month
-    }));
+    // Fallback - retornar todos os dados disponíveis
+    return allData;
   };
 
   // Gerar dados de exemplo para visualização
@@ -710,27 +683,27 @@ export default function ReportsPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="space-y-2">
                 <h3 className="text-sm text-gray-400">Total de Receitas</h3>
-                <p className="text-2xl font-orbitron text-green-400">
+                <div className="text-2xl font-orbitron text-green-400">
                   {isLoadingSummary ? (
                     <Skeleton className="h-8 w-32" />
                   ) : (
                     formatCurrency(Number(summaryData?.totalIncome || 0))
                   )}
-                </p>
+                </div>
               </div>
               <div className="space-y-2">
                 <h3 className="text-sm text-gray-400">Total de Despesas</h3>
-                <p className="text-2xl font-orbitron text-red-400">
+                <div className="text-2xl font-orbitron text-red-400">
                   {isLoadingSummary ? (
                     <Skeleton className="h-8 w-32" />
                   ) : (
                     formatCurrency(Number(summaryData?.totalExpenses || 0))
                   )}
-                </p>
+                </div>
               </div>
               <div className="space-y-2">
                 <h3 className="text-sm text-gray-400">Saldo Atual</h3>
-                <p 
+                <div 
                   className={`text-2xl font-orbitron ${
                     Number(walletData?.saldo_atual || 0) >= 0 ? "text-primary" : "text-red-400"
                   }`}
@@ -740,7 +713,7 @@ export default function ReportsPage() {
                   ) : (
                     formatCurrency(Number(walletData?.saldo_atual || 0))
                   )}
-                </p>
+                </div>
               </div>
             </div>
           </CardContent>

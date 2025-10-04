@@ -536,18 +536,24 @@ export async function getDashboardSummary(req: Request, res: Response) {
     }
     
     const userId = req.user.id;
+    console.log("🔍 Dashboard Summary - UserId:", userId);
     
     // Get user's wallet
     const wallet = await storage.getWalletByUserId(userId);
     if (!wallet) {
+      console.log("❌ Carteira não encontrada para userId:", userId);
       return res.status(404).json({ message: "Carteira não encontrada" });
     }
     
+    console.log("💼 Carteira encontrada - ID:", wallet.id, "Saldo:", wallet.saldo_atual);
+    
     // Get monthly transaction summary
     const monthlyData = await storage.getMonthlyTransactionSummary(wallet.id);
+    console.log("📊 Monthly Data:", JSON.stringify(monthlyData, null, 2));
     
     // Get expenses by category
     const expensesData = await storage.getExpensesByCategory(wallet.id);
+    console.log("📈 Expenses Data:", JSON.stringify(expensesData, null, 2));
     
     // Calculate total expenses for percentage calculation
     const totalExpensesAmount = expensesData.reduce(
@@ -570,17 +576,21 @@ export async function getDashboardSummary(req: Request, res: Response) {
     // Get income and expense totals
     const { totalIncome, totalExpenses } = await storage.getIncomeExpenseTotals(wallet.id);
     
-    // Adicionar log para depuração dos valores de receita e despesa
-    console.log("Dashboard totals:", { totalIncome, totalExpenses });
+    console.log("💰 Dashboard totals:", { totalIncome, totalExpenses });
+    console.log("📝 ExpensesByCategory processed:", JSON.stringify(expensesByCategory, null, 2));
     
-    res.status(200).json({
+    const responseData = {
       monthlyData,
       expensesByCategory,
       totalIncome,
       totalExpenses
-    });
+    };
+    
+    console.log("📤 Final Response:", JSON.stringify(responseData, null, 2));
+    
+    res.status(200).json(responseData);
   } catch (error) {
-    console.error("Error in getDashboardSummary:", error);
+    console.error("❌ Error in getDashboardSummary:", error);
     res.status(500).json({ message: "Erro ao obter resumo do dashboard" });
   }
 }
