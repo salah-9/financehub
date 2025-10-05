@@ -28,7 +28,17 @@ if (!fs.existsSync(publicDir)) {
 const upload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, path.resolve(process.cwd(), 'public'));
+      // Em produção, os logos vão para dist/public, em desenvolvimento para public/
+      const isProduction = process.env.NODE_ENV === 'production';
+      const publicPath = isProduction ? 'dist/public' : 'public';
+      const destination = path.resolve(process.cwd(), publicPath);
+      
+      // Garantir que o diretório existe
+      if (!fs.existsSync(destination)) {
+        fs.mkdirSync(destination, { recursive: true, mode: 0o755 });
+      }
+      
+      cb(null, destination);
     },
     filename: (req, file, cb) => {
       // Salva como logo-light ou logo-dark conforme o campo
@@ -219,6 +229,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     combinedAuth,
     checkImpersonation,
     categoryController.deleteCategory,
+  );
+  
+  // Admin route for colorizing global categories (superadmin only)
+  app.post(
+    "/api/admin/categories/colorize-global",
+    combinedAuth,
+    checkImpersonation,
+    requireSuperAdmin,
+    categoryController.colorizeGlobalCategories,
   );
 
   // Payment Method routes

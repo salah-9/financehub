@@ -84,22 +84,29 @@ async function runMigrationsIfNeeded() {
 
 async function ensureAdminUserExists() {
   console.log('👤 Verificando usuário admin...');
+  
+  // Buscar credenciais nas variáveis de ambiente ou usar padrão
+  const adminEmail = process.env.SYSTEM_USER_ADMIN || 'teste@teste.com';
+  const adminPassword = process.env.SYSTEM_USER_PASS || 'admin123';
+  
+  console.log(`👤 Email admin: ${adminEmail}`);
+  
   const client = postgres(process.env.DATABASE_URL || '', { prepare: false });
   try {
     // Verificar se admin já existe
     const existingAdmin = await client`
-      SELECT id FROM usuarios WHERE email = 'teste@teste.com' LIMIT 1
+      SELECT id FROM usuarios WHERE email = ${adminEmail} LIMIT 1
     `;
     let adminId;
     if (existingAdmin.length > 0) {
-      console.log('👤 Usuário admin já existe: teste@teste.com');
+      console.log(`👤 Usuário admin já existe: ${adminEmail}`);
       adminId = existingAdmin[0].id;
     } else {
     console.log('👤 Criando usuário admin padrão...');
-    const hashedPassword = await bcrypt.hash('admin123', 12);
+    const hashedPassword = await bcrypt.hash(adminPassword, 12);
     const result = await client`
       INSERT INTO usuarios (email, senha, nome, telefone, ativo, tipo_usuario, status_assinatura, data_expiracao_assinatura)
-      VALUES ('teste@teste.com', ${hashedPassword}, 'Administrador', '(00) 00000-0000', true, 'super_admin', 'ativa', ${new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)})
+      VALUES (${adminEmail}, ${hashedPassword}, 'Administrador', '(00) 00000-0000', true, 'super_admin', 'ativa', ${new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)})
       RETURNING id
     `;
       adminId = result[0].id;
@@ -108,8 +115,8 @@ async function ensureAdminUserExists() {
       VALUES ('Carteira Principal', ${adminId}, 'Carteira principal do administrador')
     `;
     console.log('✅ Usuário admin criado com sucesso!');
-    console.log('📧 Email: teste@teste.com');
-    console.log('🔑 Senha: admin123');
+    console.log(`📧 Email: ${adminEmail}`);
+    console.log(`🔑 Senha: ${adminPassword}`);
     }
     // Verificar se existem categorias globais
     const globalCategories = await client`SELECT id FROM categorias WHERE global = true LIMIT 1`;
