@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo de Deployment do FinanceHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-left: 4px solid #4CAF50;
+            padding-left: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p, li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .checklist {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .checklist ul {
+            margin-left: 0;
+        }
+
+        .checklist li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .warning strong {
+            color: #ff6b6b;
+        }
+
+        .info {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .page-break {
+            page-break-after: always;
+            margin: 40px 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Guia Completo de Deployment do FinanceHub</h1>
+            <div class="meta">
+                <p><strong>Projeto:</strong> FinanceHub | <strong>Versão:</strong> 0.0.19</p>
+                <p><strong>Data:</strong> 2026-03-30 | <strong>Autor:</strong> Ellan15 (GitHub)</p>
+                <p><strong>Repositório:</strong> <a href="https://github.com/Ellan15/financehub" target="_blank">https://github.com/Ellan15/financehub</a></p>
+            </div>
+        </header>
+
+        <h2>🚀 Pré-requisitos</h2>
+        <p>Antes de iniciar o deployment, certifique-se de ter:</p>
+        <div class="checklist">
+            <ul>
+                <li>VPS Hostinger 8GB (Plano Anual) - com Easypanel instalado</li>
+                <li>Domínio registrado (recomendado: Registro.br)</li>
+                <li>Cloudflare configurado com os nameservers</li>
+                <li>PostgreSQL instalado no Easypanel</li>
+                <li>N8N v1.119.0 configurado</li>
+                <li>Credenciais de API: OpenAI, Google Gemini, ASAAS, UAZAPI</li>
+            </ul>
+        </div>
+
+        <h2>📝 Passo 1: Preparar o Repositório GitHub</h2>
+
+        <h3>1.1 Criar Repositório Privado</h3>
+        <pre>
+# Se ainda não autenticou no GitHub CLI
+gh auth login
+
+# Criar repositório privado
+gh repo create financehub --private --source=. --remote=origin --push
+        </pre>
+
+        <h3>1.2 Adicionar Token de Acesso (para Easypanel)</h3>
+        <ol>
+            <li>Acesse: <a href="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a></li>
+            <li>Clique em "Generate new token (classic)"</li>
+            <li>Configure as permissões:
+                <ul>
+                    <li>✅ <code>repo</code> (acesso completo ao repositório)</li>
+                    <li>✅ <code>admin:repo_hook</code> (webhooks)</li>
+                </ul>
+            </li>
+            <li>Copie o token gerado</li>
+        </ol>
+        <div class="warning">
+            <strong>⚠️ Importante:</strong> Guarde este token com segurança! Não compartilhe com ninguém.
+        </div>
+
+        <h2>🔧 Passo 2: Configurar GitHub no Easypanel</h2>
+
+        <h3>2.1 Adicionar Token do GitHub</h3>
+        <ol>
+            <li>Acesse o Easypanel: <code>https://&lt;SEU_IP_VPS&gt;:3000</code></li>
+            <li>Vá em <strong>Configurações</strong> → <strong>GitHub</strong></li>
+            <li>Cole o token gerado</li>
+        </ol>
+
+        <h3>2.2 Instalar a Aplicação via GitHub</h3>
+        <ol>
+            <li>No Easypanel, clique em <strong>"Criar Aplicativo"</strong></li>
+            <li>Selecione a aba <strong>"Github"</strong></li>
+            <li>Preencha os campos conforme a tabela abaixo:</li>
+        </ol>
+
+        <table>
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td><strong>Proprietário</strong></td>
+                <td>Ellan15</td>
+            </tr>
+            <tr>
+                <td><strong>Repositório</strong></td>
+                <td>financehub</td>
+            </tr>
+            <tr>
+                <td><strong>Ramo</strong></td>
+                <td>main</td>
+            </tr>
+            <tr>
+                <td><strong>Caminho de Build</strong></td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><strong>Dockerfile</strong></td>
+                <td>Dockerfile</td>
+            </tr>
+        </table>
+
+        <p>Clique em <strong>"Salvar"</strong></p>
+
+        <h2>🗄️ Passo 3: Configurar Variáveis de Ambiente</h2>
+
+        <h3>3.1 Acessar Configurações da Aplicação</h3>
+        <ol>
+            <li>No Easypanel, acesse seu aplicativo <strong>FinanceHub</strong></li>
+            <li>Vá em <strong>"Environment Variables"</strong> (ou <strong>"Variáveis de Ambiente"</strong>)</li>
+        </ol>
+
+        <h3>3.2 Adicionar as Variáveis</h3>
+        <pre>
+# Sessão e Segurança
+SESSION_SECRET=gqCIgEOmdliU9Ugz7F5t0aDF0ENW6uT3EHqeHPXkP0mtrbIJrBfJ+vb4d2JxbdUOV6uQiNyK++q+BhLoD+UjJA==
+
+# Banco de Dados
+DATABASE_URL=&lt;sua_credencial_postgres&gt;
+
+# Webhook N8N (Ativação de Usuários)
+WEBHOOK_ATIVACAO_URL=https://workflow.seudominio.com/webhook/ativacao
+
+# URL Base da Aplicação
+BASE_URL=https://app.seudominio.com
+
+# Idioma Padrão
+DEFAULT_LOCALE=pt-br
+
+# ASAAS (Pagamentos)
+ASAAS_API_KEY="&lt;SEU_TOKEN_ASAAS&gt;"
+ASAAS_WEBHOOK_SECRET=a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9d0e1f2
+ASAAS_ENVIRONMENT=production
+
+# UAZAPI (WhatsApp Business)
+UAZAPI_URL=https://sua-instancia.uazapi.dev
+UAZAPI_TOKEN=&lt;seu_token_uazapi&gt;
+        </pre>
+
+        <h2>💾 Passo 4: Consolidar o Banco de Dados</h2>
+
+        <h3>4.1 Acessar o Console da Aplicação</h3>
+        <ol>
+            <li>No Easypanel, abra seu aplicativo <strong>FinanceHub</strong></li>
+            <li>Clique em <strong>"Console"</strong> (terminal)</li>
+            <li>Clique em <strong>"sh"</strong> para iniciar o terminal</li>
+        </ol>
+
+        <h3>4.2 Executar Migrações</h3>
+        <pre>
+# Executar migrações do banco de dados
+npm run start:migration
+
+# Quando perguntado: "Confirma que estas são as credenciais corretas?"
+# Responda: S
+
+# Quando perguntado: "Deseja zerar o Banco de dados?"
+# Responda: S
+        </pre>
+
+        <div class="warning">
+            <strong>⚠️ ATENÇÃO:</strong> A resposta S na segunda pergunta apagará todos os dados existentes!
+        </div>
+
+        <h3>4.3 Ativar Idiomas</h3>
+        <pre>
+npm run import:locale pt-br
+npm run import:locale en-us
+npm run import:locale es-es
+        </pre>
+
+        <h3>4.4 Finalizar</h3>
+        <pre>exit</pre>
+        <p>Clique no botão <strong>"Restart"</strong> (segundo botão ao lado de "Implantar")</p>
+
+        <h2>🌐 Passo 5: Configurar Domínio</h2>
+
+        <h3>5.1 Apontar Subdomínio para a Aplicação</h3>
+        <ol>
+            <li>Na lateral do Easypanel, dentro da aplicação, clique em <strong>"Domínios"</strong></li>
+            <li>Clique em <strong>"Adicionar Domínio"</strong></li>
+            <li>Preencha:</li>
+        </ol>
+
+        <table>
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td><strong>Host</strong></td>
+                <td>app.seudominio.com</td>
+            </tr>
+            <tr>
+                <td><strong>Porta</strong></td>
+                <td>5000</td>
+            </tr>
+        </table>
+
+        <p>Clique em <strong>"Criar"</strong></p>
+
+        <h3>5.2 Configurar DNS na Cloudflare</h3>
+        <ol>
+            <li>Acesse: <a href="https://dash.cloudflare.com" target="_blank">https://dash.cloudflare.com</a></li>
+            <li>Selecione seu domínio</li>
+            <li>Vá em <strong>"DNS"</strong> → <strong>"Registros"</strong></li>
+            <li>Crie um registro <strong>A</strong>:</li>
+        </ol>
+
+        <pre>
+Nome: app
+Endereço IPv4: &lt;SEU_IP_VPS&gt;
+Status: Apenas DNS (sem proxy)
+TTL: Auto
+        </pre>
+
+        <h2>🧪 Passo 6: Testar o Deployment</h2>
+        <div class="checklist">
+            <ul>
+                <li>Acessar: <code>https://app.seudominio.com</code></li>
+                <li>Fazer login com credenciais padrão:
+                    <ul style="margin-top: 8px;">
+                        <li>E-mail: <code>teste@teste.com</code></li>
+                        <li>Senha: <code>admin123</code></li>
+                    </ul>
+                </li>
+                <li><strong>Mudar a senha padrão imediatamente!</strong></li>
+                <li>Criar novo usuário</li>
+                <li>Verificar webhook de ativação (WhatsApp)</li>
+                <li>Testar cobrança no ASAAS</li>
+                <li>Validar workflows do N8N</li>
+            </ul>
+        </div>
+
+        <h2>🔐 Passo 7: Configurações de Segurança</h2>
+
+        <h3>Após o Primeiro Acesso:</h3>
+        <ol>
+            <li><strong>Altere as credenciais padrão:</strong>
+                <ul>
+                    <li>E-mail: <code>teste@teste.com</code> → seu e-mail</li>
+                    <li>Senha: <code>admin123</code> → senha forte</li>
+                </ul>
+            </li>
+            <li><strong>Habilite HTTPS:</strong>
+                <ul>
+                    <li>O Easypanel configura automaticamente via Let's Encrypt</li>
+                </ul>
+            </li>
+            <li><strong>Configure Backup:</strong>
+                <ul>
+                    <li>Easypanel → Configurações → Backup</li>
+                    <li>Configure backup automático do PostgreSQL</li>
+                </ul>
+            </li>
+            <li><strong>Monitore os Logs:</strong>
+                <ul>
+                    <li>Easypanel → Aplicativo → Logs</li>
+                    <li>Verifique erros de deployment</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>📱 Passo 8: Integração UAZAPI (WhatsApp Business)</h2>
+        <ol>
+            <li>Acesse: <a href="https://uazapi.dev/" target="_blank">https://uazapi.dev/</a></li>
+            <li>Contrate 1 instância de WhatsApp (R$ 29,00/mês)</li>
+            <li>Leia o QR Code com seu WhatsApp Business</li>
+            <li>Configure no N8N:
+                <ul>
+                    <li>URL do servidor UAZAPI</li>
+                    <li>Token de autenticação</li>
+                </ul>
+            </li>
+            <li>Atualize a variável <code>UAZAPI_TOKEN</code> no Easypanel</li>
+        </ol>
+
+        <h2>💳 Passo 9: Integração ASAAS (Pagamentos)</h2>
+        <ol>
+            <li>Acesse: <a href="https://www.asaas.com/" target="_blank">https://www.asaas.com/</a></li>
+            <li>Crie/complete sua conta</li>
+            <li>Vá em <strong>Integrações</strong> → <strong>Chaves de API</strong></li>
+            <li>Gere sua chave de API</li>
+            <li>Configure no Easypanel (ver Passo 3)</li>
+        </ol>
+
+        <h2>🔄 Passo 10: Deploy Contínuo (CI/CD)</h2>
+
+        <h3>Atualizar a Aplicação:</h3>
+        <p>Toda vez que você fizer <code>git push</code> para a branch <code>main</code>:</p>
+        <ol>
+            <li>GitHub disparará um webhook</li>
+            <li>Easypanel receberá a notificação</li>
+            <li>Easypanel fará rebuild automático da imagem Docker</li>
+            <li>A aplicação será atualizada</li>
+        </ol>
+
+        <pre>
+# Fluxo de atualização:
+git add .
+git commit -m "Descrição da mudança"
+git push origin main
+
+# Aguarde 2-5 minutos para o Easypanel fazer o rebuild
+        </pre>
+
+        <h2>🆘 Troubleshooting</h2>
+
+        <h3>Erro: "Connection refused"</h3>
+        <ul>
+            <li>Verifique se o PostgreSQL está rodando</li>
+            <li>Confira as credenciais de <code>DATABASE_URL</code></li>
+        </ul>
+
+        <h3>Erro: "Webhook not found"</h3>
+        <ul>
+            <li>Verifique a URL do webhook no N8N</li>
+            <li>Certifique-se que o N8N está rodando</li>
+        </ul>
+
+        <h3>Aplicação não sobe após push</h3>
+        <ul>
+            <li>Verifique os logs: Easypanel → Aplicativo → Logs</li>
+            <li>Confira se as variáveis de ambiente estão corretas</li>
+        </ul>
+
+        <h3>WhatsApp Business não envia mensagens</h3>
+        <ul>
+            <li>Verifique credenciais da UAZAPI</li>
+            <li>Teste o webhook manualmente no N8N</li>
+        </ul>
+
+        <h2>📞 Suporte</h2>
+        <ul>
+            <li><strong>WhatsApp:</strong> 55 800 809 6151</li>
+            <li><strong>Email:</strong> seu-email@seudominio.com</li>
+            <li><strong>Documentação N8N:</strong> <a href="https://docs.n8n.io/" target="_blank">https://docs.n8n.io/</a></li>
+            <li><strong>Documentação Easypanel:</strong> <a href="https://www.easypanel.io/" target="_blank">https://www.easypanel.io/</a></li>
+        </ul>
+
+        <footer>
+            <h2>✅ Deployment Concluído com Sucesso!</h2>
+            <p><strong>Parabéns!</strong> Sua aplicação FinanceHub está online e pronta para uso.</p>
+            <p><strong>Próximos Passos:</strong></p>
+            <ul style="margin-left: 20px; text-align: left; display: inline-block;">
+                <li>Monitorar performance no Grafana (se configurado)</li>
+                <li>Configurar alertas de erros</li>
+                <li>Fazer backup regular do banco de dados</li>
+                <li>Atualizar versão periodicamente</li>
+            </ul>
+            <br><br>
+            <p><em>Documento gerado em: 2026-03-30</em></p>
+            <p><em>Versão do FinanceHub: 0.0.19</em></p>
+        </footer>
+    </div>
+</body>
+</html>
