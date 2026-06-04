@@ -1,27 +1,21 @@
-# Dockerfile simples para rodar a aplicação
-FROM node:20-alpine
+FROM node:20-bookworm-slim
 
 # Instalar dependências do sistema necessárias para compilar pacotes nativos
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     make \
     g++ \
-    cairo-dev \
-    jpeg-dev \
-    pango-dev \
-    musl-dev \
-    giflib-dev \
-    pixman-dev \
-    pangomm-dev \
-    libjpeg-turbo-dev \
-    freetype-dev \
+    libcairo2-dev \
+    libjpeg-dev \
+    libpango1.0-dev \
+    libgif-dev \
+    libpixman-1-dev \
+    libfreetype6-dev \
+    libharfbuzz-dev \
     chromium \
-    nss \
-    freetype \
-    freetype-dev \
-    harfbuzz \
     ca-certificates \
-    ttf-freefont
+    fonts-freefont-ttf \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
