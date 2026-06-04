@@ -137,7 +137,7 @@ function Router() {
                 <Settings />
               </MainLayout>
             </Route>
-            <Route path="/api-tokens">
+            <Route path="/api">
               <MainLayout>
                 <Settings defaultTab="api" />
               </MainLayout>

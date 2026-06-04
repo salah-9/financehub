@@ -101,7 +101,7 @@ function Sidebar() {
         { icon: <CreditCard className="mr-3 h-4 w-4" />, text: "Formas de Pagamento", path: "/payment-methods" },
         { icon: <Tag className="mr-3 h-4 w-4" />, text: "Categorias", path: "/categories" },
         { icon: <CalendarDays className="mr-3 h-4 w-4" />, text: "Lembretes", path: "/reminders" },
-        { icon: <Key className="mr-3 h-4 w-4" />, text: "API", path: "/api-tokens" },
+        { icon: <Key className="mr-3 h-4 w-4" />, text: "API", path: "/api" },
         { icon: <Settings className="mr-3 h-4 w-4" />, text: "Configurações", path: "/settings" },
       ]
     }
