@@ -137,6 +137,11 @@ function Router() {
                 <Settings />
               </MainLayout>
             </Route>
+            <Route path="/api-tokens">
+              <MainLayout>
+                <Settings defaultTab="api" />
+              </MainLayout>
+            </Route>
             <Route path="/wallet">
               <MainLayout>
                 <Wallet />

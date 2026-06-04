@@ -172,11 +172,11 @@ function ModalAnimadaErro({ open, onClose, mensagem, icone }: ModalAnimadaErroPr
   );
 }
 
-export default function SettingsPage() {
+export default function SettingsPage({ defaultTab = "perfil" }: { defaultTab?: string }) {
   const { user } = useAuth();
   const { toast } = useToast();
   const [erroModal, setErroModal] = useState({ open: false, mensagem: "" });
-  const [activeTab, setActiveTab] = useState("perfil");
+  const [activeTab, setActiveTab] = useState(defaultTab);
 
   // Formulário de perfil
   const profileForm = useForm<ProfileFormValues>({
