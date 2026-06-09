@@ -70,7 +70,7 @@ async function runMigrationsIfNeeded() {
     try {
       // Executar o comando de migration usando drizzle-kit
       const { execSync } = await import('child_process');
-      execSync('npx drizzle-kit push --config=drizzle.config.ts', { 
+      execSync('npx drizzle-kit push --config=drizzle.config.ts --force', {
         stdio: 'inherit',
         cwd: process.cwd()
       });
